@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.blueBar {
+  background: #2A1745;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 100%;
+}
+
+.nav {
+  background: #252525;
+}
+
+.textUnderLine {
+  font-family: serif;
+  font-weight: 400;
+  font-size: 36px;
+  /* width: 206px; */
+  margin-bottom: 22px;
+}
+
+.textUnderLine2 {
+  border-bottom: 2px solid #7682EC;
+}
