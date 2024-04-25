@@ -26,3 +26,17 @@
 .textUnderLine2 {
   border-bottom: 2px solid #7682EC;
 }
+
+.contact-bg {
+  background: #252525 url(./assets/image.png);
+  background-size: auto;
+}
+
+.checkbox {
+  width: 25px;
+  height: 25px;
+}
+
+ul {
+  list-style-type: circle;
+}
