@@ -5,6 +5,7 @@ import instagram from "../assets/Instagram.png";
 import Facebook from "../assets/Facebook.png";
 import twitter from "../assets/twitter.png";
 import linkedin from "../assets/linkedin.png";
+import Email from "../assets/Email.png";
 
 const Footer = () => {
   return (
@@ -38,29 +39,41 @@ const Footer = () => {
         </div>
         <div className="flex justify-center">
           <div>
-            <p className="title text-xl pb-10">Company</p>
+            <p className="title text-xl pb-10 font-bold">Support</p>
             <p className="pb-2">About</p>
-            <p className="pb-2">About</p>
-            <p className="pb-2">About</p>
-            <p>About</p>
+            <p className="pb-2">Contact us</p>
+            <p className="pb-2">Careers</p>
+            <p className="pb-2">Services</p>
+            <p>Blog</p>
           </div>
         </div>
         <div className="flex justify-center">
           <div>
-            <p className="title text-xl pb-10">Company</p>
-            <p className="pb-2">About</p>
-            <p className="pb-2">About</p>
-            <p className="pb-2">About</p>
-            <p>About</p>
+            <p className="title text-xl pb-10 font-bold">Company</p>
+            <p className="pb-2">Help center</p>
+            <p className="pb-2">Report a bug</p>
+            <p>Chat support</p>
           </div>
         </div>
         <div className="flex justify-center">
           <div>
-            <p className="title text-xl pb-10">Company</p>
-            <p className="pb-2">About</p>
-            <p className="pb-2">About</p>
-            <p className="pb-2">About</p>
-            <p>About</p>
+            <p className="title text-xl pb-10 font-bold">Contacts us</p>
+            <div className="pb-2 flex items-start">
+              <img src={Email} alt="" className="mr-2 w-5 h-5" />
+              <span>support@nexusphere.io</span>
+            </div>
+            <div className="pb-2 flex items-start">
+              <img src={Email} alt="" className="mr-2 w-5 h-5" />
+              <span>+234784766547</span>
+            </div>
+            <div className="pb-2 flex items-start">
+              <img src={Email} alt="" className="mr-2 w-5 h-5" />
+              <span>support@nexusphere.io</span>
+            </div>
+            <div className="flex items-start">
+              <img src={Email} alt="" className="mr-2 w-5 h-5" />
+              <span>794 Mcallister St San Francisco, 94102</span>
+            </div>
           </div>
         </div>
       </div>
