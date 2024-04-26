@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'; // Import FontAwesome flag icon
+import { faPaperPlane, faSpinner } from '@fortawesome/free-solid-svg-icons'; // Import FontAwesome flag icon
 // import { ReactCountryFlag } from 'react-country-flag';
 
 import ReactFlagsSelect from "react-flags-select";
@@ -10,6 +10,8 @@ import ReactFlagsSelect from "react-flags-select";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Mapping from "./IsoMapping";
+
+import axios from 'axios';
 
 const Content = ()=>{
     const [selected, setSelected] = useState("CA");
@@ -25,6 +27,8 @@ const Content = ()=>{
         'website': '',
         'message': ''
     })
+    const [isFormSubmitted, setIsFormSubmitted] = useState(false)
+    const [btnClicked, setBtnClicked] = useState(false)
 
     const handleCountryChange = (code) => {
         const phone_code = Mapping(code)
@@ -32,7 +36,7 @@ const Content = ()=>{
         setcountryCode(phone_code)
     };
 
-    function handleServices(event){
+    const handleServices = (event) => {
         const {value, checked} = event.target
         if (checked){
             setServices([...services, value])
@@ -41,7 +45,7 @@ const Content = ()=>{
         }
     }
 
-    function handleChange(event){
+    const handleChange = (event) => {
         const {name, value} = event.target
         setFormData(prevFormData => {
             return {
@@ -51,9 +55,7 @@ const Content = ()=>{
         })
     }
 
-    console.log(formData);
-
-    function handleSubmitForm(event){
+    const handleSubmitForm = (event) => {
         event.preventDefault()
         setFormData(prevFormData => {
             return {
@@ -61,8 +63,30 @@ const Content = ()=>{
                 "services": services
             }
         })
-        console.log(formData);
+        setIsFormSubmitted(true)
+        setBtnClicked(true)
     }
+
+    useEffect(() => {
+        // Define an effect to fetch data after form submission
+        const fetchData = async () => {
+          try {
+            const response = await axios.post('http://127.0.0.1:5000/submit_form', formData);
+            alert('Data Submitted successfully')
+            setBtnClicked(false) // Set button back to false
+            // Optionally set the fetched data in component state or perform other actions
+          } catch (error) {
+            console.error('Error submitting data:', error);
+            // Handle error state or show error message to user
+          }
+        };
+    
+        if (isFormSubmitted){
+            fetchData(); // Call fetchData function
+        }
+        setIsFormSubmitted(false); // Reset the form submission flag
+
+      }, [isFormSubmitted]); // Run the effect whenever isFormSubmitted changes
 
     const Button = styled.button`
         background: linear-gradient(92.73deg, #3a008c 26.15%, #8543e2 117.44%);
@@ -102,7 +126,7 @@ const Content = ()=>{
                     <div className="w-full md:w-1/2">
                         <div className="bg-white border rounded-lg shadow-md py-6 px-3 my-5">
                             <h4 className="text-center font-medium">We would love to hear from you and discuss how we can assist you.</h4>
-                            <form className="px-6 py-4" onSubmit={handleSubmitForm}>
+                            <form method="post" className="px-6 py-4" onSubmit={handleSubmitForm}>
                                 <label htmlFor="">Fullname</label>
                                 <input type="text" value={formData.fullname} onChange={handleChange} name="fullname" className="w-full px-3 pl-5 py-2 mt-1 mb-3 border rounded shadow-sm focus:outline-none focus:border-blue-500" placeholder="Ade Tiger" required/>
                             
@@ -172,7 +196,8 @@ const Content = ()=>{
 
                                 <p className="text-center">
                                     <Button className="rounded-md py-2 px-7 text-white font-500">
-                                        <FontAwesomeIcon icon={faPaperPlane} className="mr-3"/> Send Message
+                                        {btnClicked ? <FontAwesomeIcon icon={faSpinner} className='fa-spin mr-3' /> : <FontAwesomeIcon icon={faPaperPlane} className='mr-3'/>}
+                                        {btnClicked ? "Sending" : "Send Message"}
                                     </Button>
                                 </p>
                             </form>
