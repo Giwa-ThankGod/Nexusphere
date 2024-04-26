@@ -25,13 +25,13 @@ const Content = () => {
       <div className="nav">
         <img src={eye} alt="" />
       </div>
-      <div className="bigPurpleCtn relative flex flex-col justify-center">
+      <div className="lg:bg-transparent nav bigPurpleCtn relative flex flex-col justify-center">
         <img
           src={BigPurple}
           alt=""
-          className="BigPurple absolute zIndex nav w-full"
+          className="lg:block hidden BigPurple absolute zIndex nav w-full"
         />
-        <div className="InnerBigPurple flex items-center justify-around">
+        <div className="InnerBigPurple lg:flex items-center lg:justify-around lg:px-0 px-5">
           <div>
             <p className="text-white textUnderLine">
               <span className="textUnderLine2">MARKETING</span>
@@ -44,13 +44,13 @@ const Content = () => {
             </p>
             <p className="text-white">Explore our marketing services below :</p>
           </div>
-          <div className="">
+          <div className="lg:pt-0 pt-5">
             <img src={marketing} alt="" srcset="" />
           </div>
         </div>
       </div>
-      <div className="nav pb-40">
-        <div className=" services grid lg:grid-cols-3 gap-5 px-36 relative">
+      <div className="nav lg:pb-40 pb-20">
+        <div className=" services grid lg:grid-cols-3 gap-5 lg:px-36 px-5 relative">
           {[2, 3, , 4, 3, , 3, 3, 3, , 3, 3, 3, 2, 2].map((val) => (
             <div className="box flex flex-col items-center">
               <img src={serviceone} alt="" srcset="" className="flex " />
@@ -65,28 +65,28 @@ const Content = () => {
             </div>
           ))}
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center pt-10 lg:pt-0">
           <GradientButton />
         </div>
       </div>
       <div className="nav">
-        <div className="pt-36 grid lg:grid-cols-2 items-start">
-          <div className="flex justify-center">
+        <div className="pt-16 lg:pt-36 grid lg:grid-cols-2 items-start">
+          <div className="lg:flex justify-center hidden">
             <img src={women} alt="" srcset="" />
           </div>
-          <div className="specificWidth pt-20">
+          <div className="specificWidth lg:pt-20 pt-0 lg:px-0 px-2">
             <p className="textUnderLine">
               <span className="textUnderLine2 text-white">
                 OUR AFRICA OFFLINE SERVICE:
               </span>
             </p>
-            <p className="pb-3 text-white">
+            <p className="pb-3 text-white lg:text-base text-sm">
               Our approach to offline marketing goes beyond traditional
               strategies . We immerse ourselves in representing your brand as
               ambassadors, building personal relationship with your audience,
               and becoming passionate Advocates for your project.
             </p>
-            <p className="pb-3 text-white">
+            <p className="pb-3 text-white lg:text-base text-sm">
               We take the time to deeply understand your project, ensuring that
               we possess in-depth knowledge to effectively convey your value
               proposition to the outside world. By doing so, we bring your
@@ -94,13 +94,13 @@ const Content = () => {
               diverse offline settings where your projects target audience can
               be found.
             </p>
-            <p className="pb-3 text-white">
+            <p className="pb-3 text-white lg:text-base text-sm">
               Furthermore, we proactively seek to build partnerships with local
               influencers, reputable individuals, educational institutions and
               other firms to establish meaningful connections and foster trust
               within the community.
             </p>
-            <p className="pb-3 text-white">
+            <p className="pb-3 text-white lg:text-base text-sm">
               This collaborative approach helps to amplify your brand presence
               and credibility, leveraging the influence and authority of this
               partners to reach and spread the word to the target audience.
@@ -109,7 +109,7 @@ const Content = () => {
               experiences, and deep audience understanding to ensure your
               message connects on a deeper level.
             </p>
-            <p className="pb-3 text-white">
+            <p className="pb-3 text-white lg:text-base text-sm">
               By representing your brand offline in a genuine and informed
               manner, we strive to create impactful and lasting impressions,
               nurturing a strong connection between your project and it audience
@@ -122,8 +122,8 @@ const Content = () => {
         </div>
       </div>
       <div className="nav pb-10">
-        <div className="pt-36 grid lg:grid-cols-2 items-start relative">
-          <div className=" pl-56 pt-20">
+        <div className="pt-5 lg:lg-36 grid lg:grid-cols-2 items-start relative">
+          <div className=" lg:pl-56 pl-5 pt-20">
             <p className="textUnderLine">
               <span className="textUnderLine2 text-white">BRANDING: </span>
             </p>
@@ -148,14 +148,14 @@ const Content = () => {
               include:
             </p>
           </div>
-          <div className="flex justify-center relative">
+          <div className="lg:flex justify-center relative hidden">
             <img src={women} alt="" srcset="" className="z-10" />
             <img src={rollingBox} alt="" srcset="" className="rollingBox z-1" />
           </div>
         </div>
       </div>
       <div className="nav">
-        <div className="grid grid-cols-3 py-12 px-36 gap-5">
+        <div className="grid lg:grid-cols-3 py-12 px-5 lg:px-36 gap-5">
           {[1, 3, 4].map((item) => (
             <Blog height={"881px"} />
           ))}
@@ -165,11 +165,13 @@ const Content = () => {
         </div>
       </div>
       <div className="nav pb-10 ">
-        <div className="pt-36 grid lg:grid-cols-2 items-start relative">
-          <div className="clipArt flex justify-center relative mx-5">
-            <img src={workers} alt="" srcset="" className="z-10 clipArtImg" />
+        <div className="lg:pt-36 pt-5 grid lg:grid-cols-2 items-start relative">
+          <div className="lg:block hidden">
+            <div className="clipArt flex justify-center relative mx-5">
+              <img src={workers} alt="" srcset="" className="z-10 clipArtImg" />
+            </div>
           </div>
-          <div className=" pr-24 pt-20">
+          <div className="lg:pr-24 lg:px-0 px-5 pt-20">
             <p className="textUnderLine pb-20">
               <span className="textUnderLine2 text-white">
                 OUR MANAGEMENT SERVICES:{" "}
@@ -199,7 +201,7 @@ const Content = () => {
         </div>
       </div>
       <div className="nav">
-        <div className="grid grid-cols-3 py-12 px-36 gap-5">
+        <div className="grid lg:grid-cols-3 grid-cols-1 py-12 lg:px-36 px-5 gap-5">
           {[1, 3, 4].map((item) => (
             <Blog height={"881px"} />
           ))}
@@ -212,14 +214,14 @@ const Content = () => {
         <img
           src={circlePurple}
           alt=""
-          className="BigPurple2 absolute zIndex nav"
+          className="BigPurple2 lg:block hidden absolute zIndex nav"
         />
-        <div className="consulation2 flex justify-around">
-          <div className="mt-16">
+        <div className="consulation2 lg:pl-5 pl-5 flex justify-around">
+          <div className="lg:mt-16 mt-5">
             <p className="text-white textUnderLine">
               <span className="textUnderLine2">CONSULTATION </span>
             </p>
-            <p className="text-white w-80 pb-10">
+            <p className="text-white lg:w-80 pb-10">
               Reinvent your Web3 Project with our Consultation services At
               Nexusphere, our Web3 consultation services are your key to
               unlocking the full potential of decentralized technologies.
@@ -228,14 +230,11 @@ const Content = () => {
               Here's a closer look at what sets our offerings apart:
             </p>
           </div>
-          <div className="">
+          <div className="lg:block hidden">
             <img src={consultation2} alt="" srcset="" className="mt-16" />
           </div>
         </div>
-        <div
-          className="grid grid-cols-3 px-32 gap-5 relative "
-          style={{ top: "50px", left: "0px" }}
-        >
+        <div className="g grid lg:grid-cols-3 lg:px-32 px-5 gap-5 relative ">
           {[1, 2, 3, 4, 4, 5].map((val) => (
             <div className="box3 flex flex-col px-5 justify-center items-center">
               <p className="text-white font-medium pb-6">COMPREHENSIVE</p>
@@ -250,17 +249,17 @@ const Content = () => {
           ))}
         </div>
       </div>
-      <div className="nav pt-14 funding flex flex-col items-center justify-center">
+      <div className="nav lg:pt-14 funding flex flex-col items-center justify-center">
         <p className="text-white textUnderLine">
           <span className="textUnderLine2">FUNDING</span>
         </p>
-        <p className="text-white fundtingTextP text-2xl pb-36">
-          We offer funding services to Projects seeking financial resources to
-          achieve their goals. We help projects connect with various funding
-          sources, develop funding strategies, and craft compelling funding
-          proposals.
+        <p className="text-white fundtingTextP lg:text-2xl text-sm lg:pb-36 pb-5 px-4">
+          We offer funding services to Projects <br /> seeking financial
+          resources to achieve their goals. We help projects connect with
+          various <br /> funding sources, develop funding strategies, and craft
+          compelling funding proposals.
         </p>
-        <div className="flex justify-center py-10">
+        <div className="flex justify-center lg:py-10 py-3">
           <GradientButton height={"881px"} />
         </div>
       </div>
@@ -296,8 +295,14 @@ const Blog = ({ height }) => {
 const Main = styled.div`
   .funding {
     height: 757px;
-    .fundtingTextP {
-      width: 775px;
+    @media (max-width: 769px) {
+      height: 500px;
+    }
+  }
+  .g {
+    top: 50px;
+    @media (max-width: 769px) {
+      top: 0px;
     }
   }
   .clipArt {
@@ -316,6 +321,10 @@ const Main = styled.div`
   .box3 {
     width: 374px;
     height: 330px;
+
+    @media (max-width: 769px) {
+      width: auto;
+    }
   }
   .img {
     z-index: -1;
@@ -327,11 +336,18 @@ const Main = styled.div`
   }
   .specificWidth {
     width: 528px;
+    @media (max-width: 769px) {
+      width: auto;
+    }
   }
   .services {
     /* margin-top: -100px; */
     top: -100px;
     left: 0;
+
+    @media (max-width: 769px) {
+      top: 0px;
+    }
   }
   .box {
     height: 373px;
@@ -350,18 +366,33 @@ const Main = styled.div`
   .bigPurpleCtn2 {
     height: 1216.96px;
     z-index: 2;
+
+    @media (max-width: 769px) {
+      height: auto;
+    }
   }
   .BigPurple2 {
     height: 1216.96px;
     /* width: 1199.55px; */
     z-index: 222;
     right: 0px;
+
+    @media (max-width: 769px) {
+      height: 800px;
+    }
   }
   .consulation2 {
     height: 1216.96px;
+    @media (max-width: 769px) {
+      height: 800px;
+    }
   }
+
   .bigPurpleCtn {
     height: 1059px;
+    @media (max-width: 769px) {
+      height: 800px;
+    }
   }
   .BigPurple {
     height: 1059px;

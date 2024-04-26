@@ -30,58 +30,71 @@ import facebookName from "../../assets/facebookName.png";
 import rating from "../../assets/rating.png";
 import Gradient from "../../components/Gradient";
 import Footer from "../../components/Footer";
+
 const Content = () => {
+  const data = [
+    "Decentralized finance (DeFi) platforms",
+    "Non-fungible token (NFT) projects",
+    "Metaverse platforms",
+    "Play-to-earn (P2E) games",
+    "Educational technology projects",
+    "Supply chain management platforms",
+    " Data ownership and privacy solutions",
+    "Web3 social networks ",
+  ];
   return (
     <Main>
       <div className="hero relative">
         <Navbar />
-        <img src={HEROMAGE} alt="" className="absolute top-0 heroimg w-full" />
         <img
-          src={box}
+          src={HEROMAGE}
           alt=""
-          className="absolute box"
-          style={{ width: "206.31px" }}
+          className="absolute top-0 heroimg w-full h-full"
         />
+        <img src={box} alt="" className="absolute box" />
         <img src={LooperGroup} alt="" className="absolute LooperGroup" />
 
         <div className="flex justify-center items-center flex-col text-center pt-36 ">
-          <p className="gradient_color font-bold text-8xl">
-            Get the best marketing & PR for your project
+          <p className="gradient_color font-bold lg:text-8xl text-3xl">
+            Get the best <br /> marketing & PR <br /> for your project
           </p>
-          <p className="text-4xl pt-6 pb-28 text-white">Tech & Web3</p>
+          <p className="lg:text-4xl text-xl lg:pt-6 pt-2 lg:pb-28 pb-5 text-white">
+            Tech & Web3
+          </p>
           <GradientButton />
-          <div className="flex absolute bottom-10">
-            <img src={Bitcoin} alt="" srcset="" />
-            <img src={eth} alt="" srcset="" />
-            <img src={bnb} alt="" srcset="" />
-            <img src={Dorge} alt="" srcset="" />
+          <div className="flex absolute bottom-10 overflow-scroll">
+            <img src={Bitcoin} alt="" srcset="" className="social-img2" />
+            <img src={eth} alt="" srcset="" className="social-img2" />
+            <img src={bnb} alt="" srcset="" className="social-img2" />
+            <img src={Dorge} alt="" srcset="" className="social-img2" />
           </div>
         </div>
       </div>
-      <div className="nav relative overflow-hidden b">
+      <div
+        className="nav relative lg:overflow-hidden b"
+        style={{ maxWidth: "100%" }}
+      >
         <img src={Framew} alt="" className="absolute Framew z-1" />
 
-        <div className="grid grid-cols-2 px-24 pt-6 about pb-32">
-          <div className="mr-8 flex flex-col items-center">
-            <p className="text-center text-4xl text-white">
+        <div className="grid md:grid-cols-2 lg:px-24 px-5  pt-6 about lg:pb-32 pb-10">
+          <div className="lg:mr-8 lg:mb-0 mb-5 flex flex-col items-center">
+            <p className="text-center lg:text-4xl text-2xl text-white">
               Welcome to Nexusphere
             </p>
-            <p
-              className="text-white text-base flex pt-5 pb-3"
-              style={{ width: "413px" }}
-            >
+            <p className="text-white text-base flex pt-5 pb-3">
               <span>
-                Where innovation meets impact, and your brand journey takes
-                center stage.{" "}
+                Where innovation meets impact, and your brand journey <br />{" "}
+                takes center stage.{" "}
               </span>
             </p>
-            <p className="text-white " style={{ width: "413px" }}>
+            <p className="text-white lg:text-base text-xs">
               <span style={{ color: "#FF99FF" }}>
                 What sets us apart is our unique selling point:
               </span>{" "}
-              a commitment to grassroots marketing that goes beyond the surface,
-              reaching the heart of your target audience through a dynamic blend
-              of both digital and traditional channels.
+              a commitment <br />
+              to grassroots marketing that goes beyond the <br /> surface,
+              reaching the heart of your target audience <br /> through a
+              dynamic blend of both digital and traditional channels.
             </p>
           </div>
           <img src={youtubeT} alt="" />
@@ -90,31 +103,34 @@ const Content = () => {
           <p className="text-white text-center text-xl font-medium pb-12 pt-1">
             Trusted by
           </p>
-          <div className="flex justify-center z">
-            <div className="flex pb-20">
-              <img src={Frame1} alt="" />
-              <img src={Frame2} alt="" />
-              <img src={Frame3} alt="" />
-              <img src={Frame4} alt="" />
-              <img src={Frame5} alt="" />
-              <img src={Frame6} alt="" />
+          <div className="flex lg:justify-center  overflow-scroll">
+            <div
+              className="flex pb-14"
+              // style={{ maxWidth: "100%", height: "300px" }}
+            >
+              <img src={Frame1} alt="" className="social-img2" />
+              <img src={Frame2} alt="" className="social-img2" />
+              <img src={Frame3} alt="" className="social-img2" />
+              <img src={Frame4} alt="" className="social-img2" />
+              <img src={Frame5} alt="" className="social-img2" />
+              <img src={Frame6} alt="" className="social-img2" />
             </div>
           </div>
         </div>
       </div>
-
       <div className="flex flex-col items-center nav">
         <div className="">
-          <p className="pt-8 pb-5 text-center text-4xl text-white">
-            Exceptional services we render{" "}
+          <p className="pt-8 pb-5 text-center lg:text-4xl text-2xl text-white">
+            Exceptional services we render
           </p>
-          <p className="text-center desc pb-32 text-sm text-white">
+          <p className="text-center pb-32 lg:text-sm text-xs text-white">
             Nexusphere offers a diverse array of expertly crafted services,
-            seamlessly merging creativity and technology to deliver solutions
-            that exceed expectations and drive success to your project.
+            seamlessly merging creativity and technology to deliver <br />{" "}
+            solutions that exceed expectations and drive success to your
+            project.
           </p>
         </div>
-        <div className="grid lg:grid-cols-3 px-36 gap-5 pb-36">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:px-36 px-8 gap-5 pb-36">
           {[1, 2, 3, 4, 3, 3].map((val) => (
             <div className="service flex flex-col items-center">
               <img src={service1} alt="" />
@@ -126,7 +142,7 @@ const Content = () => {
                   meet your unique needs...
                 </p>
               </div>
-              <Button className="rounded-2xl mb-12 py-2 px-2 text-white text-base font-500 font-semibold">
+              <Button className="rounded-2xl lg:mb-12 mb-5 py-2 px-2 text-white text-base font-500 font-semibold">
                 Learn more
               </Button>
             </div>
@@ -134,8 +150,8 @@ const Content = () => {
         </div>
       </div>
       <div
-        className="relative nav Framew"
-        style={{ background: "rgb(26 26 26)" }}
+        className="relative nav"
+        style={{ background: "rgb(26 26 26)", zIndex: "-2", left: "0px" }}
       >
         {" "}
         <img
@@ -144,11 +160,11 @@ const Content = () => {
           className="absolute b"
           // style={{ height: "1328px" }}
         />
-        <p className="text-white pt-80 text-center text-4xl">
+        <p className="text-white lg:pt-80 pt-20 text-center lg:text-4xl text-2xl">
           Projects we’ve worked on
         </p>
         <div className=" pt-24">
-          <div className="grid lg:grid-cols-3 place-items-center px-36">
+          <div className="grid lg:grid-cols-3 place-items-center lg:px-36">
             <div className="borderRight borderBottom h-60 w-full flex flex-col items-center justify-center">
               <div>
                 <img src={Frame1} alt="" />
@@ -206,22 +222,17 @@ const Content = () => {
           </div>
           <div className="projects">
             <div className="flex flex-col items-center">
-              <p
-                className="text-white text-center text-4xl py-5"
-                style={{ width: "500px" }}
-              >
-                What types of project does Nexusphere work with?
+              <p className="text-white text-center lg:text-4xl text-2xl py-5">
+                What types of project does <br /> Nexusphere work with?
               </p>
-              <p className=" text-center pb-20">
+              <p className=" text-center lg:pb-20 pb-5">
                 We work with a variety of web3 and tech projects, including
               </p>
             </div>
-            <div className="grid lg:grid-cols-4 px-48 gap-5 pb-20 ">
-              {[1, 2, 2, 2, 2, 2, , 2, 2].map((val) => (
-                <div className="purpleBox flex items-center justify-center mb-10">
-                  <p className="text-white text-center text-xs ">
-                    Decentralized finance (DeFi) platforms
-                  </p>
+            <div className="grid lg:grid-cols-4 md:grid-cols-2 lg:px-48 gap-5 lg:pb-20 pb-10 place-items-center">
+              {data.map((val) => (
+                <div className="purpleBox flex items-center justify-center lg:mb-10">
+                  <p className="text-white text-center text-xs ">{val}</p>
                 </div>
               ))}
             </div>
@@ -230,38 +241,49 @@ const Content = () => {
       </div>
       <Gradient />
       <div className="nav pb-28 relative">
-        <img src={map} alt="" className="absolute right-10 top-10" />
+        <img
+          src={map}
+          alt=""
+          className="absolute right-10 top-10 lg:block hidden"
+        />
         <div className="flex flex-col justify-center items-center">
-          <p
-            className="pt-32 text-4xl pb-4 text-center text-white"
-            style={{ width: "500px" }}
-          >
-            What our customers are saying about us
+          <p className="pt-32 lg:text-4xl text-2xl pb-4 text-center text-white">
+            What our customers are saying <br /> about us
           </p>
-          <p style={{ width: "768px" }} className="text-sm pb-28 text-white">
+          <p className="lg:text-sm text-xs lg:pb-28 pb-8 text-white lg:px-0 px-3">
             At Nexusphere, we take pride in delivering exceptional services that
-            drive success for our clients. Here's what some of our satisfied
-            customers have to say about their experience working with us
+            drive success for our clients. Here's what some of <br /> our
+            satisfied customers have to say about their experience working with
+            us
           </p>
         </div>
         <div className="flex overflow-x-scroll">
           {[1].map((val) => (
             <div className="reviews flex flex-col justify-ceneter mx-3 px-5 pt-10">
-              <div className="flex justify-between">
+              <div className="flex justify-between items-center">
                 <div className="flex items-center">
-                  <img src={woman} alt="" className="profile" />
-                  <p className="text-black text-base pl-2">Jassica homes </p>
+                  <img
+                    src={woman}
+                    alt=""
+                    className="lg:w-16 lg:h-16 w-10 h-10"
+                  />
+                  <p className="text-black lg:text-base text-sm pl-2">
+                    Jassica homes{" "}
+                  </p>
                 </div>
                 <div>
-                  <img src={rating} alt="" className="stars" />
+                  <img src={rating} alt="" className="lg:h-6 h-2" />
                 </div>
               </div>
-              <p className="py-5">
+              <p className="lg:py-5 py-2 lg:text-base text-sm">
                 Lorem ipsum dolor sit amet consectetur. Nunc purus at diam massa
                 fames lorem diam. Lorem integer tempus egestas quisque leo sed
                 nec pretium faucibus. Maecenas scelerisque.
               </p>
-              <p style={{ color: "#00000066" }} className="text-sm">
+              <p
+                style={{ color: "#00000066" }}
+                className="lg:text-base text-xs"
+              >
                 BINANCE AFRICA
               </p>
             </div>
@@ -270,27 +292,24 @@ const Content = () => {
       </div>
       <div style={{ background: "#2A1745" }}>
         <div className="flex flex-col justify-center items-center">
-          <p
-            className="pt-32 text-4xl pb-4 text-center text-white"
-            style={{ width: "500px" }}
-          >
+          <p className="pt-32 lg:text-4xl text-2xl pb-4 text-center text-white">
             Be a part of our community
           </p>
           <p
-            style={{ width: "768px" }}
-            className="text-center text-sm pb-16 text-white"
+            // style={{ width: "768px" }}
+            className="text-center lg:text-sm text-xs lg:pb-16 pb-5 text-white"
           >
             Become Part of Our Vibrant Communities, Connect, Collaborate, and
-            Create with Innovators Like You. Join Us Now lets Shape the Future
-            of your project together.
+            Create with Innovators Like You. <br /> Join Us Now lets Shape the
+            Future of your project together.
           </p>
         </div>
-        <div className="grid lg:grid-cols-5 px-96 pb-40">
-          <img src={facebookName} alt="" />
-          <img src={instaName} alt="" />
-          <img src={linkedinName} alt="" />
-          <img src={telegramName} alt="" />
-          <img src={twitterName} alt="" />
+        <div className="grid grid-cols-5 place-items-center lg:px-96 px-5 pb-40">
+          <img src={facebookName} alt="" className="social-img" />
+          <img src={instaName} alt="" className="social-img" />
+          <img src={linkedinName} alt="" className="social-img" />
+          <img src={telegramName} alt="" className="social-img" />
+          <img src={twitterName} alt="" className="social-img" />
         </div>
       </div>
       <Footer />
@@ -305,20 +324,27 @@ const Button = styled.button`
 `;
 
 const Main = styled.div`
+  .social-img {
+    height: 118px;
+    width: 120px;
+
+    @media (max-width: 1130px) {
+      height: 40px;
+      width: 40px;
+    }
+  }
+  .social-img2 {
+    @media (max-width: 1130px) {
+      height: 40px;
+      /* width: 40px; */
+    }
+  }
   .reviews {
     height: 270px;
     border-radius: 47.65px;
     width: 773.47px !important;
     background-color: white;
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
-
-    .profile {
-      width: 69.88px;
-      height: 69.88px;
-    }
-    .stars {
-      height: 25.56px;
-    }
   }
   .projects {
     background: rgba(255, 255, 255, 0.3);
@@ -348,9 +374,7 @@ const Main = styled.div`
   .borderBottom {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   }
-  .desc {
-    width: 816px;
-  }
+
   .about {
   }
   .b {
@@ -366,20 +390,28 @@ const Main = styled.div`
   }
   .brands {
     z-index: 11;
-    background: rgba(71, 71, 71, 0.1);
+    background: #4747471a; /* Your specified color */
+    backdrop-filter: blur(
+      10px
+    ); /* Apply a blur effect to the content behind the element */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    padding: 20px; /* Add some padding inside the element */
   }
 
   .hero {
     background: linear-gradient(0deg, #252525 0%, rgba(22, 14, 51, 0) 31.25%);
     height: 1024px;
 
+    @media (max-width: 700px) {
+      height: 830px;
+    }
     .gradient_color {
       background: linear-gradient(96.88deg, #ffffff 36.68%, #ff65ff 91.17%);
       -webkit-background-clip: text;
       -moz-background-clip: text;
       background-clip: text;
       color: transparent;
-      width: 779px;
+      /* width: 779px; */
     }
     .heroimg {
       z-index: -12222;
@@ -391,6 +423,13 @@ const Main = styled.div`
     .box {
       bottom: 170px;
       right: 100px;
+      width: 206.31px;
+
+      @media (max-width: 700px) {
+        bottom: 230px;
+        right: 0px;
+        /* width: 101px; */
+      }
     }
   }
 `;

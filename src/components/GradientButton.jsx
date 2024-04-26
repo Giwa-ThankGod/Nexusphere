@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const GradientButton = () => {
   return (
-    <Button className="rounded-2xl py-7 px-12 text-white text-2xl font-500 font-semibold">
+    <Button className="rounded-2xl lg:py-7 py-3 lg:px-12 px-3 text-white lg:text-2xl text-lg font-500 font-semibold">
       Begin your project
     </Button>
   );

@@ -3,15 +3,28 @@ import styled from "styled-components";
 import looper1 from "../assets/Looper-2.png";
 
 const Gradient = () => {
+  const data = [
+    "NFT",
+    "EXCHANGES ",
+    "DEFI",
+    "FINTECH",
+    "AGRIFI",
+    "BLOCKCHAIN",
+    "GAMFI",
+    "METAVERSE",
+    "DAPPS",
+    "EDUTECH",
+  ];
+
   return (
     <Main className="nav relative pt-20 pb-40 overflow-hidden flex flex-col items-center">
-      <img src={looper1} alt="" className=" imgLooper  " />
-      <p className="text-center text-4xl heading text-white pb-10">
-        Marketing services for tech and web3 project/ product.
+      <img src={looper1} alt="" className=" imgLooper lg:block hidden " />
+      <p className="text-center lg:text-4xl text-xl heading text-white pb-10">
+        Marketing services for tech and web3 <br /> project/ product.
       </p>
-      <div className="grid grid-cols-2 gap-x-20 gap-y-5">
-        {[1, 3, 4, , 3, 4, 3, 2, 2, 2, 2].map((val) => (
-          <div className="gradient">NFT</div>
+      <div className="grid lg:grid-cols-2 grid-cols-2 lg:gap-x-20 gap-y-5">
+        {data.map((val) => (
+          <div className="gradient">{val}</div>
         ))}
       </div>
     </Main>
@@ -44,8 +57,10 @@ const Main = styled.div`
     height: 56px;
     border-radius: 10px;
     font-weight: 700;
-  }
-  .heading {
-    width: 600px;
+
+    @media (max-width: 768px) {
+      width: 150px;
+      height: 50px;
+    }
   }
 `;
