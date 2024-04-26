@@ -31,11 +31,11 @@ const Content = () => {
           </p>
         </div>
         <div className="ml-20">
-          <img src={purpleOne} alt="" />
+          <img src={purpleOne} alt="" className="" />
         </div>
       </div>
       <div className="grid grid-cols-2 pt-16 pb-48 relative">
-        <img src={sunrise} alt="" className="absolute top-0 left-0 zIndex" />
+        <img src={sunrise} alt="" className="absolute top-0 left-0 zIndex w" />
         <div className="ml-20">
           <img src={purpleOne} alt="" />
         </div>
