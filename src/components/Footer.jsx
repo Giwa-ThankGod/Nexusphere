@@ -9,11 +9,11 @@ import Email from "../assets/Email.png";
 
 const Footer = () => {
   return (
-    <Main className="nav pl-24 pr-20">
+    <Main className="nav lg:pl-24 pl-5 lg:pr-20 pr-5">
       <div className="main pt-32 pb-7">
-        <div className="  firstSection">
+        <div className="firstSection lg:mb-0 pb-10">
           <img src={logo2} alt="" />
-          <p className="pt-6">
+          <p className="pt-6 lg:text-lg text-sm">
             Elevate your brand with our expert in marketing. From SEO to social
             media, we craft tailored strategies for impactful online presence.
           </p>
@@ -23,7 +23,7 @@ const Footer = () => {
             <img src={twitter} alt="" srcset="" className="pr-6" />
             <img src={linkedin} alt="" srcset="" className="pr-6" />
           </div>
-          <p>Subscribe to our newsletter </p>
+          <p className="lg:text-lg text-sm">Subscribe to our newsletter </p>
           <div className="flex pt-5 relative">
             <input
               type="text"
@@ -37,51 +37,61 @@ const Footer = () => {
             />
           </div>
         </div>
-        <div className="flex justify-center">
-          <div>
-            <p className="title text-xl pb-10 font-bold">Support</p>
-            <p className="pb-2">About</p>
-            <p className="pb-2">Contact us</p>
-            <p className="pb-2">Careers</p>
-            <p className="pb-2">Services</p>
-            <p>Blog</p>
+        <div className="grid lg:grid-cols-3 md:grid-cols-2">
+          <div className="flex justify-center">
+            <div>
+              <p className="title text-xl lg:mt-0 mt-3 lg:pb-10 pb-3 font-bold responsiveLinks">
+                Support
+              </p>
+              <p className="pb-2 responsiveLinks">About</p>
+              <p className="pb-2 responsiveLinks">Contact us</p>
+              <p className="pb-2 responsiveLinks">Careers</p>
+              <p className="pb-2 responsiveLinks">Services</p>
+              <p className="responsiveLinks">Blog</p>
+            </div>
           </div>
-        </div>
-        <div className="flex justify-center">
-          <div>
-            <p className="title text-xl pb-10 font-bold">Company</p>
-            <p className="pb-2">Help center</p>
-            <p className="pb-2">Report a bug</p>
-            <p>Chat support</p>
+          <div className="flex justify-center">
+            <div>
+              <p className="title text-xl lg:mt-0 mt-3lg:pb-10 lg:pt-0 pt-3 pb-3 font-bold responsiveLinks">
+                Company
+              </p>
+              <p className="pb-2 responsiveLinks">Help center</p>
+              <p className="pb-2 responsiveLinks">Report a bug</p>
+              <p>Chat support</p>
+            </div>
           </div>
-        </div>
-        <div className="flex justify-center">
-          <div>
-            <p className="title text-xl pb-10 font-bold">Contacts us</p>
-            <div className="pb-2 flex items-start">
-              <img src={Email} alt="" className="mr-2 w-5 h-5" />
-              <span>support@nexusphere.io</span>
-            </div>
-            <div className="pb-2 flex items-start">
-              <img src={Email} alt="" className="mr-2 w-5 h-5" />
-              <span>+234784766547</span>
-            </div>
-            <div className="pb-2 flex items-start">
-              <img src={Email} alt="" className="mr-2 w-5 h-5" />
-              <span>support@nexusphere.io</span>
-            </div>
-            <div className="flex items-start">
-              <img src={Email} alt="" className="mr-2 w-5 h-5" />
-              <span>794 Mcallister St San Francisco, 94102</span>
+          <div className="flex justify-center">
+            <div className="">
+              <p className="title text-xl lg:mt-0 mt-3 lg:pb-10 lg:pt-0 pt-3 pb-3 font-bold responsiveLinks">
+                Contacts us
+              </p>
+              <div className="pb-2 flex items-start responsiveLinks">
+                <img src={Email} alt="" className="mr-2 w-5 h-5" />
+                <span>support@nexusphere.io</span>
+              </div>
+              <div className="pb-2 flex items-start responsiveLinks">
+                <img src={Email} alt="" className="mr-2 w-5 h-5" />
+                <span>+234784766547</span>
+              </div>
+              <div className="pb-2 flex items-start responsiveLinks">
+                <img src={Email} alt="" className="mr-2 w-5 h-5" />
+                <span>support@nexusphere.io</span>
+              </div>
+              <div className="flex items-start responsiveLinks">
+                <img src={Email} alt="" className="mr-2 w-5 h-5" />
+                <span>794 Mcallister St San Francisco, 94102</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="flex justify-between pb-6">
-        <p className="terms">Copyright © 2022 </p>
-        <p className="terms">
+      <div className="lg:flex block lg:justify-between pb-6">
+        <p className="terms lg:text-left text-center lg:text-base text-xs">
+          Copyright © 2022
+        </p>
+        <p className="terms lg:text-base lg:text-left text-center text-xs">
           All Rights Reserved |{" "}
-          <span className="blue textUnderLine2">
+          <span className="blue textUnderLine2 lg:text-left text-center lg:text-base text-xs">
             Terms and Conditions | Privacy Policy
           </span>
         </p>
@@ -95,7 +105,6 @@ export default Footer;
 const Main = styled.div`
   .terms {
     color: #6f6c90;
-    font-size: 16px;
   }
   .blue {
     color: #7682ec;
@@ -108,15 +117,21 @@ const Main = styled.div`
   }
   input {
     border-radius: 60px;
-    /* width: 9.82px;
-    height: 18px; */
   }
   .main {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 494px 1fr;
+
+    @media (max-width: 1130px) {
+      grid-template-columns: auto;
+    }
   }
-  .firstSection {
-    width: 494px;
+  .responsiveLinks {
+    @media (max-width: 1130px) {
+      display: flex;
+      justify-content: center;
+      font-size: 14px;
+    }
   }
   color: white;
 `;
