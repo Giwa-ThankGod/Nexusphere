@@ -5,7 +5,11 @@ import styled from "styled-components";
 const Hero = () => {
   return (
     <Main className="ctn relative flex flex-col justify-center items-center">
-      <img src={abouthome} alt="" className="absolute top-0 left-0 z-1" />
+      <img
+        src={abouthome}
+        alt=""
+        className="absolute top-0 left-0 z-1 w-full"
+      />
       <p className="text-5xl text-white">About Us</p>
       <p className="text-center pt-5 text-white text">
         Our team is a mix of creative thinkers and strategic planners. We use

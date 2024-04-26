@@ -6,7 +6,11 @@ import eye from "../../assets/eye.png";
 import women from "../../assets/women.png";
 import BigPurple from "../../assets/BigPurple.png";
 import marketing from "../../assets/marketing.png";
+import blog from "../../assets/blog.png";
+import consultation2 from "../../assets/consultation2.png";
+import workers from "../../assets/workers.png";
 import Footer from "../../components/Footer";
+import circlePurple from "../../assets/circlePurple.png";
 import serviceone from "../../assets/serviceone.png";
 import GradientButton from "../../components/GradientButton";
 import rollingBox from "../../assets/rollingBox.png";
@@ -25,7 +29,7 @@ const Content = () => {
         <img
           src={BigPurple}
           alt=""
-          className="BigPurple absolute zIndex nav "
+          className="BigPurple absolute zIndex nav w-full"
         />
         <div className="InnerBigPurple flex items-center justify-around">
           <div>
@@ -40,7 +44,7 @@ const Content = () => {
             </p>
             <p className="text-white">Explore our marketing services below :</p>
           </div>
-          <div>
+          <div className="">
             <img src={marketing} alt="" srcset="" />
           </div>
         </div>
@@ -117,7 +121,7 @@ const Content = () => {
           <GradientButton />
         </div>
       </div>
-      <div className="nav">
+      <div className="nav pb-10">
         <div className="pt-36 grid lg:grid-cols-2 items-start relative">
           <div className=" pl-56 pt-20">
             <p className="textUnderLine">
@@ -150,6 +154,116 @@ const Content = () => {
           </div>
         </div>
       </div>
+      <div className="nav">
+        <div className="grid grid-cols-3 py-12 px-36 gap-5">
+          {[1, 3, 4].map((item) => (
+            <Blog height={"881px"} />
+          ))}
+        </div>
+        <div className="flex justify-center py-10">
+          <GradientButton />
+        </div>
+      </div>
+      <div className="nav pb-10 ">
+        <div className="pt-36 grid lg:grid-cols-2 items-start relative">
+          <div className="clipArt flex justify-center relative mx-5">
+            <img src={workers} alt="" srcset="" className="z-10 clipArtImg" />
+          </div>
+          <div className=" pr-24 pt-20">
+            <p className="textUnderLine pb-20">
+              <span className="textUnderLine2 text-white">
+                OUR MANAGEMENT SERVICES:{" "}
+              </span>
+            </p>
+            <p className="pb-3 text-white">
+              Transform your brand's online game with our stellar social media
+              management services. We specialize in crafting captivating digital
+              experiences that go beyond the ordinary. Whether it's running
+              impactful campaigns that resonate with your audience, hosting live
+              events to boost interaction, or managing day-to-day social
+              interactions with finesse – we've got it covered. crucial.
+            </p>
+            <p className="pb-3 text-white">
+              Our dedicated team takes care of the nitty-gritty details, from
+              strategic planning to creating dynamic content that speaks to your
+              audience. Real-time engagement is our forte, ensuring your online
+              community has an enjoyable and memorable journey.
+            </p>
+            <p className="pb-3 text-white">
+              Let us be your guide in the vast world of social media. We not
+              only make your brand stand out but also shine brightly, leaving a
+              lasting impression on the digital landscape. Elevate your online
+              presence with Social Media Excellence from Nexusphere.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="nav">
+        <div className="grid grid-cols-3 py-12 px-36 gap-5">
+          {[1, 3, 4].map((item) => (
+            <Blog height={"881px"} />
+          ))}
+        </div>
+        <div className="flex justify-center py-10">
+          <GradientButton height={"881px"} />
+        </div>
+      </div>{" "}
+      <div className="bigPurpleCtn2 relative flex flex-col nav relative">
+        <img
+          src={circlePurple}
+          alt=""
+          className="BigPurple2 absolute zIndex nav"
+        />
+        <div className="consulation2 flex justify-around">
+          <div className="mt-16">
+            <p className="text-white textUnderLine">
+              <span className="textUnderLine2">CONSULTATION </span>
+            </p>
+            <p className="text-white w-80 pb-10">
+              Reinvent your Web3 Project with our Consultation services At
+              Nexusphere, our Web3 consultation services are your key to
+              unlocking the full potential of decentralized technologies.
+            </p>
+            <p className="text-white">
+              Here's a closer look at what sets our offerings apart:
+            </p>
+          </div>
+          <div className="">
+            <img src={consultation2} alt="" srcset="" className="mt-16" />
+          </div>
+        </div>
+        <div
+          className="grid grid-cols-3 px-32 gap-5 relative "
+          style={{ top: "50px", left: "0px" }}
+        >
+          {[1, 2, 3, 4, 4, 5].map((val) => (
+            <div className="box3 flex flex-col px-5 justify-center items-center">
+              <p className="text-white font-medium pb-6">COMPREHENSIVE</p>
+              <p className="text-white text-sm">
+                Our team boasts in-depth knowledge of the Web3 landscape,
+                covering blockchain development, smart contracts, decentralized
+                applications (DApps), and more. We're not just consultants –
+                we're your partners in navigating the complexities of this
+                transformative technology.
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="nav pt-14 funding flex flex-col items-center justify-center">
+        <p className="text-white textUnderLine">
+          <span className="textUnderLine2">FUNDING</span>
+        </p>
+        <p className="text-white fundtingTextP text-2xl pb-36">
+          We offer funding services to Projects seeking financial resources to
+          achieve their goals. We help projects connect with various funding
+          sources, develop funding strategies, and craft compelling funding
+          proposals.
+        </p>
+        <div className="flex justify-center py-10">
+          <GradientButton height={"881px"} />
+        </div>
+      </div>
       <Footer />
     </Main>
   );
@@ -157,7 +271,52 @@ const Content = () => {
 
 export default Content;
 
+const Blog = ({ height }) => {
+  return (
+    <div className="box2" style={{ height: height }}>
+      <img src={blog} alt="" className="w-full h-80 object-cover" />
+      <p className="text-center text-white py-8 text-xl">UIUX MASTERY</p>
+      <p className="text-white px-5 text-sm">
+        At Nexusphere, we make project management a breeze. Our streamlined
+        project management services are designed to keep your initiatives on
+        track without unnecessary complications. We handle the nitty-gritty
+        details of project coordination, timelines, and task assignments, so you
+        can focus on what you do best. Whether you're launching a new campaign,
+        developing a website, or diving into a marketing strategy, our project
+        management services ensure smooth sailing from start to finish. Our goal
+        is simple – to take the stress out of project management and let you
+        concentrate on achieving your objectives. Trust Nexusphere to be your
+        reliable partner in keeping things organized, efficient, and successful.
+        Nexusphere – Simplifying Project Management for Your Success.
+      </p>
+    </div>
+  );
+};
+
 const Main = styled.div`
+  .funding {
+    height: 757px;
+    .fundtingTextP {
+      width: 775px;
+    }
+  }
+  .clipArt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 16% 96%, 0% 38%);
+    height: 700px;
+    background: linear-gradient(92.73deg, #3a008c 26.15%, #8543e2 117.44%);
+
+    .clipArtImg {
+      width: 483px;
+      height: 483px;
+    }
+  }
+  .box3 {
+    width: 374px;
+    height: 330px;
+  }
   .img {
     z-index: -1;
   }
@@ -180,12 +339,34 @@ const Main = styled.div`
     background: #3b3b3b80;
     padding: 45.5px 20px;
   }
+  .box2 {
+    box-shadow: 0px 4px 12px 2px #0000002e;
+    background: #3b3b3b80;
+  }
+  .box3 {
+    box-shadow: 0px 4px 12px 2px #0000002e;
+    background: #3b3b3b80;
+  }
+  .bigPurpleCtn2 {
+    height: 1216.96px;
+    z-index: 2;
+  }
+  .BigPurple2 {
+    height: 1216.96px;
+    /* width: 1199.55px; */
+    z-index: 222;
+    right: 0px;
+  }
+  .consulation2 {
+    height: 1216.96px;
+  }
   .bigPurpleCtn {
     height: 1059px;
   }
   .BigPurple {
     height: 1059px;
   }
+
   .zIndex {
     z-index: -1;
   }
