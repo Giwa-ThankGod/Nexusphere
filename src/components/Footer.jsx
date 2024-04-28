@@ -6,6 +6,8 @@ import Facebook from "../assets/Facebook.png";
 import twitter from "../assets/twitter.png";
 import linkedin from "../assets/linkedin.png";
 import Email from "../assets/Email.png";
+import phone from "../assets/footericons/Phone.png";
+import location from "../assets/footericons/Mark.png";
 
 const Footer = () => {
   return (
@@ -52,7 +54,7 @@ const Footer = () => {
           </div>
           <div className="flex justify-center">
             <div>
-              <p className="title text-xl lg:mt-0 mt-3lg:pb-10 lg:pt-0 pt-3 pb-3 font-bold responsiveLinks">
+              <p className="title text-xl lg:mt-0 mt-3 lg:pb-10 lg:pt-0 pt-3 pb-3 font-bold responsiveLinks">
                 Company
               </p>
               <p className="pb-2 responsiveLinks">Help center</p>
@@ -70,15 +72,15 @@ const Footer = () => {
                 <span>support@nexusphere.io</span>
               </div>
               <div className="pb-2 flex items-start responsiveLinks">
-                <img src={Email} alt="" className="mr-2 w-5 h-5" />
+                <img src={phone} alt="" className="mr-2 w-5 h-5" />
                 <span>+234784766547</span>
               </div>
               <div className="pb-2 flex items-start responsiveLinks">
-                <img src={Email} alt="" className="mr-2 w-5 h-5" />
+                <img src={phone} alt="" className="mr-2 w-5 h-5" />
                 <span>support@nexusphere.io</span>
               </div>
               <div className="flex items-start responsiveLinks">
-                <img src={Email} alt="" className="mr-2 w-5 h-5" />
+                <img src={location} alt="" className="mr-2 w-5 h-5" />
                 <span>794 Mcallister St San Francisco, 94102</span>
               </div>
             </div>
