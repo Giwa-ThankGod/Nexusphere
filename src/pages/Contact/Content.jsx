@@ -136,12 +136,15 @@ const Content = ()=>{
                             </li>
                         </ul>
 
-                        <div className="grid grid-cols-5 pt-96 gap-3">
-                            <img src={facebookName} alt="" className="social-img" />
-                            <img src={instaName} alt="" className="social-img" />
-                            <img src={linkedinName} alt="" className="social-img" />
-                            <img src={telegramName} alt="" className="social-img" />
-                            <img src={twitterName} alt="" className="social-img" />
+                        <div className="pt-96">
+                            <h3 className="text-2xl my-2 font-normal text-center">Join our Community</h3>
+                            <div className="grid grid-cols-5 px-12 gap-3">
+                                <img src={facebookName} alt="" className="social-img" />
+                                <img src={instaName} alt="" className="social-img" />
+                                <img src={linkedinName} alt="" className="social-img" />
+                                <img src={telegramName} alt="" className="social-img" />
+                                <img src={twitterName} alt="" className="social-img" />
+                            </div>
                         </div>
                     </div>
                     <div className="w-full md:w-1/2">
