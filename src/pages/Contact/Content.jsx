@@ -109,8 +109,8 @@ const Content = ()=>{
         <>
         <div className="contact-bg">
             <Navbar />
-            <div className="container mx-auto mt-12">
-                <div className="flex flex-wrap justify-around">
+            <div className="container mx-auto mt-12 px-6">
+                <div className="flex flex-wrap justify-between">
                     <div className="w-full md:w-1/3 pt-20 text-white">
                         <h2 className="text-4xl text-center leading-tight">Supercharge Your Growth <br/> Now!</h2>
                         <p className="my-3">Team up with Nexusphere for a strategic partnership that propelis you ahead of your competition.</p>
@@ -136,12 +136,15 @@ const Content = ()=>{
                             </li>
                         </ul>
 
-                        <div className="grid grid-cols-5 pt-96 gap-3">
-                            <img src={facebookName} alt="" className="social-img" />
-                            <img src={instaName} alt="" className="social-img" />
-                            <img src={linkedinName} alt="" className="social-img" />
-                            <img src={telegramName} alt="" className="social-img" />
-                            <img src={twitterName} alt="" className="social-img" />
+                        <div className="pt-96">
+                            <h3 className="text-2xl my-2 font-normal text-center">Join our Community</h3>
+                            <div className="grid grid-cols-5 px-12 gap-3">
+                                <img src={facebookName} alt="" className="social-img" />
+                                <img src={instaName} alt="" className="social-img" />
+                                <img src={linkedinName} alt="" className="social-img" />
+                                <img src={telegramName} alt="" className="social-img" />
+                                <img src={twitterName} alt="" className="social-img" />
+                            </div>
                         </div>
                     </div>
                     <div className="w-full md:w-1/2">
@@ -155,11 +158,11 @@ const Content = ()=>{
                                 <input type="text" value={formData.email} onChange={handleChange} name="email" className="w-full px-3 pl-5 py-2 mt-1 mb-3 border rounded shadow-sm focus:outline-none focus:border-blue-500" placeholder="yourname@email.com" required/>
                             
                                 <label htmlFor="">Phone number</label>
-                                <div className="relative items-center mt-1 mb-3">
+                                <div className="relative flex items-center mt-1 mb-3">
                                 {/* Country Flag Dropdown */}
                                     <div className="absolute flex flex-grow items-center">
                                         <ReactFlagsSelect
-                                            className="text-2xl"
+                                            className="text-2xl mt-1"
                                             selectButtonClassName="border-0 rounded-none p-1 text-2xl"
                                             selected={selected}
                                             onSelect={handleCountryChange}
