@@ -7,6 +7,10 @@ import sunrise from "../../assets/sunrise.png";
 import Gradient from "../../components/Gradient";
 import Footer from "../../components/Footer";
 import GradientButton from "../../components/GradientButton";
+import purple from "../../assets/visiomImgs/purple.png";
+import star from "../../assets/visiomImgs/star.png";
+import video from "../../assets/visiomImgs/video.png";
+import purpleTwo from "../../assets/purpleTwo.png";
 
 const Content = () => {
   return (
@@ -14,7 +18,10 @@ const Content = () => {
       <div className="nav h-32">
         <Navbar />
       </div>
-      <Hero />
+      <Hero
+        title="About Us"
+        desc="Our team is a mix of creative thinkers and strategic planners. We use the latest tools to make sure your brand not only stands out but also connects with your audience. Whether it's marketing, PR, consulting, event management for your web3 and Tech Agency – Nexusphere is here for your brand's success"
+      />
       <div className="blueBar">
         <p className="text-white lg:text-2xl text-base font-500">
           Preparing Your Project to Achieve Success
@@ -40,8 +47,14 @@ const Content = () => {
           alt=""
           className="absolute h-full top-0 left-0 zIndex w-full"
         />
-        <div className="lg:ml-20">
-          <img src={purpleOne} alt="" className="lg:block hidden" />
+        <div className="lg:ml-20 relative">
+          <img src={purple} alt="" className="lg:block hidden" />
+          <img src={star} alt="" className="lg:block hidden absolute top-12" />
+          <img
+            src={video}
+            alt=""
+            className="lg:block hidden absolute left-24 top-20"
+          />
         </div>
         <div className="lg:pl-40 pl-5 pt-16">
           <p className="text-white textUnderLine">
@@ -103,8 +116,8 @@ const Content = () => {
             success.
           </p>
         </div>
-        <div className="lg:ml-20 ml-2 lg:mr-0 mr-2 pt-16 lg:block hidden">
-          <img src={purpleOne} alt="" />
+        <div className="lg:ml-40 ml-4 lg:mr-0 mr-2 pt-16 lg:block hidden">
+          <img src={purpleTwo} alt="" />
         </div>
       </div>
       <Gradient />

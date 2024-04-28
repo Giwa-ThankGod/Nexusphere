@@ -5,10 +5,13 @@ import l from "../assets/l.png";
 import telegram from "../assets/telegram.png";
 import burger from "../assets/burger.svg";
 import menu from "../assets/menu.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
+  const path = useLocation();
+
+  console.log(path);
 
   return (
     <Main className="grid lg:grid-cols-2 grid-cols-2 items-center pt-5">
@@ -20,17 +23,29 @@ const Navbar = () => {
         <img src={logo} alt="" srcset="" className="lg:pr-72 pr-5 pl-4" />
         <div className={`lg:flex  ${show ? "block text-center" : "hidden"}`}>
           <Link to="/">
-            <p className="text-white lg:text-base text-lg font-medium py-2 lg:py-0 px-2">
+            <p
+              className={`${
+                path.pathname == "/" ? "text-purple-700" : "text-white"
+              } lg:text-base text-lg font-medium py-2 lg:py-0 px-2`}
+            >
               Home
             </p>
           </Link>
           <Link to="/about">
-            <p className="text-white lg:text-base text-lg font-medium py-2 lg:py-0 px-5">
-              Abouut
+            <p
+              className={`${
+                path.pathname == "/about" ? "text-purple-700" : "text-white"
+              } lg:text-base text-lg font-medium py-2 lg:py-0 px-2`}
+            >
+              About
             </p>
           </Link>
           <Link to="/services">
-            <p className="text-white lg:text-base text-lg font-medium py-2 lg:py-0 px-2">
+            <p
+              className={`${
+                path.pathname == "/services" ? "text-purple-700" : "text-white"
+              } lg:text-base text-lg font-medium py-2 lg:py-0 px-2`}
+            >
               Services
             </p>
           </Link>
