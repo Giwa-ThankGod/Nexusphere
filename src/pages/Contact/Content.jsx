@@ -110,7 +110,7 @@ const Content = ()=>{
         <div className="contact-bg">
             <Navbar />
             <div className="container mx-auto mt-12 px-6">
-                <div className="flex flex-wrap justify-around">
+                <div className="flex flex-wrap justify-between">
                     <div className="w-full md:w-1/3 pt-20 text-white">
                         <h2 className="text-4xl text-center leading-tight">Supercharge Your Growth <br/> Now!</h2>
                         <p className="my-3">Team up with Nexusphere for a strategic partnership that propelis you ahead of your competition.</p>
