@@ -20,7 +20,9 @@ const Navbar = () => {
           show && "active flex-col justify-center items-center"
         }`}
       >
-        <img src={logo} alt="" srcset="" className="lg:pr-72 pr-5 pl-4" />
+        <Link to="/">
+          <img srcSet={logo} alt="" className="lg:pr-72 pr-5 pl-4" />
+        </Link>
         <div className={`lg:flex  ${show ? "block text-center" : "hidden"}`}>
           <Link to="/">
             <p
@@ -52,8 +54,8 @@ const Navbar = () => {
           {show && (
             <div className={`mt-4`}>
               <div className="flex justify-center mb-3">
-                <img src={l} alt="" srcset="" className="logo mx-2" />
-                <img src={telegram} alt="" srcset="" className="logo mx-2" />
+                <img srcSet={l} alt="" className="logo mx-2" />
+                <img srcSet={telegram} alt="" className="logo mx-2" />
               </div>
               <Link to="/contact">
                 <button className="rounded text-white py-2 px-5 lg:mr-4 lg:ml-12">
@@ -69,7 +71,7 @@ const Navbar = () => {
           className="flex justify-end mr-10 z-10 fixed right-1 top-8"
           onClick={() => setShow(false)}
         >
-          <img src={menu} alt="" className="logoTurnOnAndOff" />
+          <img srcSet={menu} alt="" className="logoTurnOnAndOff" />
         </div>
       )}
       {!show && (
@@ -77,12 +79,12 @@ const Navbar = () => {
           className="lg:hidden flex justify-end mr-10 z-12"
           onClick={() => setShow(true)}
         >
-          <img src={burger} alt="" className="logoTurnOnAndOff" />
+          <img srcSet={burger} alt="" className="logoTurnOnAndOff" />
         </div>
       )}
       <div className={`lg:justify-end z-10 lg:flex hidden`}>
-        <img src={l} alt="" srcset="" className="logo" />
-        <img src={telegram} alt="" srcset="" className="logo lg:ml-3" />
+        <img srcSet={l} alt="" className="logo" />
+        <img srcSet={telegram} alt="" className="logo lg:ml-3" />
         <Link to="/contact">
           <button className="rounded text-white py-2 px-5 lg:mr-4 lg:ml-12">
             Contact us
