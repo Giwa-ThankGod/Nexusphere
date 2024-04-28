@@ -18,6 +18,7 @@ import instaName from "../../assets/instaName.png";
 import facebookName from "../../assets/facebookName.png";
 
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 const Content = ()=>{
     const [selected, setSelected] = useState("CA");
@@ -113,9 +114,9 @@ const Content = ()=>{
                 <div className="flex flex-wrap justify-between">
                     <div className="w-full md:w-1/3 pt-20 text-white">
                         <h2 className="text-4xl text-center leading-tight">Supercharge Your Growth <br/> Now!</h2>
-                        <p className="my-3">Team up with Nexusphere for a strategic partnership that propelis you ahead of your competition.</p>
-                        <span className="mb-3">Here's what we'll do:</span>
-                        <ul className="pl-4">
+                        <p className="my-3 text-xl">Team up with Nexusphere for a strategic partnership that propelis you ahead of your competition.</p>
+                        <span className="mb-3 text-xl">Here's what we'll do:</span>
+                        <ul className="pl-4 text-xl">
                             <li className="my-3 flex gap-4">
                                 Dive into your business and goals. 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -136,14 +137,14 @@ const Content = ()=>{
                             </li>
                         </ul>
 
-                        <div className="pt-96">
+                        <div className="pt-80">
                             <h3 className="text-2xl my-2 font-normal text-center">Join our Community</h3>
                             <div className="grid grid-cols-5 px-12 gap-3">
-                                <img src={facebookName} alt="" className="social-img" />
-                                <img src={instaName} alt="" className="social-img" />
-                                <img src={linkedinName} alt="" className="social-img" />
-                                <img src={telegramName} alt="" className="social-img" />
-                                <img src={twitterName} alt="" className="social-img" />
+                                <Link to="https://www.facebook.com/profile.php?id=61557765987604"><img srcSet={facebookName} alt="" className="social-img" /></Link>
+                                <Link to="https://www.instagram.com/sailwith_nexusphere?igsh=MzRlODBiNWFlZA=="><img srcSet={instaName} alt="" className="social-img" /></Link>
+                                <Link to="/"><img srcSet={linkedinName} alt="" className="social-img" /></Link>
+                                <Link to="/"><img srcSet={telegramName} alt="" className="social-img" /></Link>
+                                <Link to="https://x.com/nexusphere1?s=21"><img srcSet={twitterName} alt="" className="social-img" /></Link>
                             </div>
                         </div>
                     </div>
