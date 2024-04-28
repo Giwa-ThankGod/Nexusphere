@@ -34,8 +34,8 @@
 }
 
 .contact-bg {
-  background: #252525 url(./assets/image.png);
-  background-size: auto;
+  background: #252525 url(./assets/image.png) bottom right;
+  background-position: center;
 }
 
 .checkbox {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaperPlane, faSpinner } from '@fortawesome/free-solid-svg-icons'; // Import FontAwesome flag icon
+import { faPaperPlane, faSpinner, faClose } from '@fortawesome/free-solid-svg-icons'; // Import FontAwesome flag icon
 // import { ReactCountryFlag } from 'react-country-flag';
 
 import ReactFlagsSelect from "react-flags-select";
@@ -10,6 +10,12 @@ import ReactFlagsSelect from "react-flags-select";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import Mapping from "./IsoMapping";
+
+import linkedinName from "../../assets/linkedinName.png";
+import telegramName from "../../assets/telegramName.png";
+import twitterName from "../../assets/twitterName.png";
+import instaName from "../../assets/instaName.png";
+import facebookName from "../../assets/facebookName.png";
 
 import axios from 'axios';
 
@@ -29,6 +35,7 @@ const Content = ()=>{
     })
     const [isFormSubmitted, setIsFormSubmitted] = useState(false)
     const [btnClicked, setBtnClicked] = useState(false)
+    const [msg, setMsg] = useState('')
 
     const handleCountryChange = (code) => {
         const phone_code = Mapping(code)
@@ -67,6 +74,10 @@ const Content = ()=>{
         setBtnClicked(true)
     }
 
+    const handleCancleAlert = ()=>{
+        setMsg('')
+    }
+
     useEffect(() => {
         // Define an effect to fetch data after form submission
         const fetchData = async () => {
@@ -77,6 +88,8 @@ const Content = ()=>{
             // Optionally set the fetched data in component state or perform other actions
           } catch (error) {
             console.error('Error submitting data:', error);
+            setMsg("An error occured while submitting form data!!!")
+            setBtnClicked(false) // Set button back to false
             // Handle error state or show error message to user
           }
         };
@@ -96,9 +109,9 @@ const Content = ()=>{
         <>
         <div className="contact-bg">
             <Navbar />
-            <div className="container mx-auto mt-12 px-6">
+            <div className="container mx-auto mt-12">
                 <div className="flex flex-wrap justify-around">
-                    <div className="w-full md:w-1/3 p-5 pt-20 text-white">
+                    <div className="w-full md:w-1/3 pt-20 text-white">
                         <h2 className="text-4xl text-center leading-tight">Supercharge Your Growth <br/> Now!</h2>
                         <p className="my-3">Team up with Nexusphere for a strategic partnership that propelis you ahead of your competition.</p>
                         <span className="mb-3">Here's what we'll do:</span>
@@ -122,6 +135,14 @@ const Content = ()=>{
                                 </svg>
                             </li>
                         </ul>
+
+                        <div className="grid grid-cols-5 pt-96 gap-3">
+                            <img src={facebookName} alt="" className="social-img" />
+                            <img src={instaName} alt="" className="social-img" />
+                            <img src={linkedinName} alt="" className="social-img" />
+                            <img src={telegramName} alt="" className="social-img" />
+                            <img src={twitterName} alt="" className="social-img" />
+                        </div>
                     </div>
                     <div className="w-full md:w-1/2">
                         <div className="bg-white border rounded-lg shadow-md py-6 px-3 my-5">
@@ -189,10 +210,12 @@ const Content = ()=>{
                                 </div>
 
                                 <label htmlFor="">Website URL (optional)</label>
-                                <input type="text" value={formData.website} onChange={handleChange} name="website" className="w-full px-3 pl-5 py-2 mt-1 mb-3 border rounded shadow-sm focus:outline-none focus:border-blue-500" placeholder="" />
+                                <input type="text" value={formData.website} onChange={handleChange} name="website" className="w-full px-3 pl-5 py-2 mt-1 mb-3 border rounded shadow-sm focus:outline-none focus:border-blue-500" placeholder="www.nexusphere.io" />
 
                                 <label htmlFor="">Message (optional)</label>
-                                <textarea value={formData.message} onChange={handleChange} name="message" className="w-full px-3 pl-5 py-2 mt-1 mb-3 border rounded shadow-sm focus:outline-none focus:border-blue-500" cols="30" rows="4"></textarea>
+                                <textarea value={formData.message} onChange={handleChange} name="message" className="w-full px-3 pl-5 py-2 mt-1 mb-3 border rounded shadow-sm focus:outline-none focus:border-blue-500" cols="30" rows="4" placeholder="message"></textarea>
+
+                                {msg ? <div className="flex justify-between items-center cursor-pointer bg-purple-200 text-purple-900 px-5 py-2 my-2 rounded">{msg} <FontAwesomeIcon onClick={handleCancleAlert} icon={faClose} /></div> : ''}
 
                                 <p className="text-center">
                                     <Button className="rounded-md py-2 px-7 text-white font-500">
