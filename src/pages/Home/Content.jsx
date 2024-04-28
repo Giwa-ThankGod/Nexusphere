@@ -38,6 +38,8 @@ import Footer from "../../components/Footer";
 import Ellipse1 from "../../assets/Ellipse1.png";
 import Ellipse2 from "../../assets/Ellipse2.png";
 
+import { Link } from "react-router-dom";
+
 const Content = () => {
   const data = [
     "Decentralized finance (DeFi) platforms",
@@ -347,11 +349,11 @@ const Content = () => {
           </p>
         </div>
         <div className="grid grid-cols-5 place-items-center lg:px-96 px-5 pb-40">
-          <img src={facebookName} alt="" className="social-img" />
-          <img src={instaName} alt="" className="social-img" />
-          <img src={linkedinName} alt="" className="social-img" />
-          <img src={telegramName} alt="" className="social-img" />
-          <img src={twitterName} alt="" className="social-img" />
+          <Link to="https://www.facebook.com/profile.php?id=61557765987604"><img srcSet={facebookName} alt="" className="social-img" /></Link>
+          <Link to="https://www.instagram.com/sailwith_nexusphere?igsh=MzRlODBiNWFlZA=="><img srcSet={instaName} alt="" className="social-img" /></Link>
+          <Link to="/"><img srcSet={linkedinName} alt="" className="social-img" /></Link>
+          <Link to="/"><img srcSet={telegramName} alt="" className="social-img" /></Link>
+          <Link to="https://x.com/nexusphere1?s=21"><img srcSet={twitterName} alt="" className="social-img" /></Link>
         </div>
       </div>
       <Footer />
