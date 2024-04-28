@@ -158,11 +158,11 @@ const Content = ()=>{
                                 <input type="text" value={formData.email} onChange={handleChange} name="email" className="w-full px-3 pl-5 py-2 mt-1 mb-3 border rounded shadow-sm focus:outline-none focus:border-blue-500" placeholder="yourname@email.com" required/>
                             
                                 <label htmlFor="">Phone number</label>
-                                <div className="relative items-center mt-1 mb-3">
+                                <div className="relative flex items-center mt-1 mb-3">
                                 {/* Country Flag Dropdown */}
                                     <div className="absolute flex flex-grow items-center">
                                         <ReactFlagsSelect
-                                            className="text-2xl"
+                                            className="text-2xl mt-1"
                                             selectButtonClassName="border-0 rounded-none p-1 text-2xl"
                                             selected={selected}
                                             onSelect={handleCountryChange}
