@@ -2,7 +2,7 @@ import React from "react";
 import abouthome from "../assets/abouthome.png";
 import styled from "styled-components";
 
-const Hero = () => {
+const Hero = ({ title, desc }) => {
   return (
     <Main className="ctn relative flex flex-col justify-center items-center">
       <img
@@ -10,13 +10,9 @@ const Hero = () => {
         alt=""
         className="absolute top-0 left-0 z-1 w-full"
       />
-      <p className="lg:text-7xl text-4xl text-white heading">About Us</p>
-      <p className="text-center pt-5 text-white lg:text-base text-xs px-5">
-        Our team is a mix of creative thinkers and strategic planners. We use
-        the latest <br /> tools to make sure your brand not only stands out but
-        also connects with your <br /> audience. Whether it's marketing, PR,
-        consulting, event management for your <br /> web3 and Tech Agency –
-        Nexusphere is here for your brand's success
+      <p className="lg:text-9xl text-4xl text-white heading">{title}</p>
+      <p className="text-center pt-5 text-white lg:text-base text-xs px-5 desc">
+        {desc}
       </p>
     </Main>
   );
@@ -32,6 +28,12 @@ const Main = styled.div`
   img {
     height: 530px;
     z-index: -1;
+  }
+  .desc {
+    width: 663px;
+    @media (max-width: 767px) {
+      width: auto;
+    }
   }
   .text {
     @media (max-width: 767px) {

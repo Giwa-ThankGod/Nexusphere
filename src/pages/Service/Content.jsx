@@ -14,14 +14,97 @@ import circlePurple from "../../assets/circlePurple.png";
 import serviceone from "../../assets/serviceone.png";
 import GradientButton from "../../components/GradientButton";
 import rollingBox from "../../assets/rollingBox.png";
+import marketingOne from "../../assets/marketing/1.png";
+import marketingTwo from "../../assets/marketing/2.png";
+import marketingThree from "../../assets/marketing/3.png";
+import marketingFour from "../../assets/marketing/4.png";
+import marketingFive from "../../assets/marketing/5.png";
+import marketingSix from "../../assets/marketing/6.png";
+import marketingSeven from "../../assets/marketing/7.png";
+import marketingEight from "../../assets/marketing/8.png";
+import marketingNine from "../../assets/marketing/9.png";
+import marketingTen from "../../assets/marketing/10.png";
+import marketingEleven from "../../assets/marketing/11.png";
+import marketingTwelve from "../../assets/marketing/12.png";
+import branding from "../../assets/branding.png";
+import star from "../../assets/visiomImgs/star.png";
+import Ellipse3 from "../../assets/Ellipse3.png";
+import { blogs, servicesTwo } from "../../helpers/Static/DummyData";
 
 const Content = () => {
+  const data = [
+    {
+      name: "SEO",
+      desc: "We optimize your website and online presence to rank higher in search engine results. By conducting thorough keyword research, optimizing on-page elements, and building high-quality backlinks, we ensure that your web3 or tech project gets discovered by your target audience.",
+      img: marketingOne,
+    },
+    {
+      name: "INFLUENCER MARKETING:",
+      desc: "We leverage the power of influential figures within the web3 and tech communities to promote your project. Our team identifies and collaborates with relevant influencers who can effectively communicate your unique value proposition, drive engagement, and increase brand visibility.",
+      img: marketingTwo,
+    },
+    {
+      name: "Content Writing & Content Marketing",
+      desc: "Our skilled content creators develop compelling content tailored to the web3 and tech industry. From blog posts and whitepapers to case studies and technical documentation, we produce valuable content that resonates with your audience, establishes thought leadership, and drives organic traffic to your website. ",
+      img: marketingThree,
+    },
+    {
+      name: "AIRDROP MARKETING:",
+      desc: "Airdrops can be a powerful tool for web3 and tech projects to gain attention and create a community. We design and execute airdrop campaigns that target relevant communities, manage airdrop distribution, and drive engagement and participation, leading to increased project awareness and user adoption.",
+      img: marketingFour,
+    },
+    {
+      name: "LEADS GENERATION:",
+      desc: "We implement effective lead generation strategies specifically designed for web3 and tech projects. Through targeted marketing campaigns, landing page optimization, and lead nurturing techniques, we attract high-quality leads interested in your project, converting them into valuable customers or contributors. ",
+      img: marketingFive,
+    },
+    {
+      name: "MEDIA RELATIONS:",
+      desc: "We build and maintain relationships with web3 and tech journalist, bloggers, event organisers and influencers both internationally and regionally to secure positive media coverage for your web3 or tech project",
+      img: marketingSix,
+    },
+    {
+      name: "CRYPTO EXCHANGE LISTING:",
+      desc: "We guide web3 and tech projects through the process of getting listed on reputable crypto exchanges. Our team helps navigate the listing requirements, prepares the necessary documentation, and facilitates the application process to ensure successful listings and increased trading opportunities for your token or cryptocurrency. ",
+      img: marketingSeven,
+    },
+    {
+      name: "SMART CONTRACT DEVELOPMENT",
+      desc: " As a web3 marketing agency, we understand the importance of blockchain technology. Our team of skilled developers can assist you in building secure and efficient smart contracts that power decentralized applications (dApps) and enable seamless transactions within your web3 project. ",
+      img: marketingEight,
+    },
+    {
+      name: "PRESS RELEASE:",
+      desc: "Our team of experts will craft an engaging press release to announce important milestones, developments, events or even cryptocurrencies related to your project. We will also handle the distribution process to relevant media outlets.",
+      img: marketingNine,
+    },
+    {
+      name: "COMMUNITY GROWTH",
+      desc: `Building and nurturing a strong community is vital for web3 and tech projects. We employ community management strategies, including social media engagement, forum participation, and targeted outreach, to foster meaningful interactions, cultivate brand advocates, and drive organic growth within your project's community. Boost your brand's visibility by teaming up with our video marketing agency. Step away from the usual and let's take your marketing to the next level. Join forces with our team of experts to create eye-catching videos that make your brand unforgettable. We're here to tell your story in a way that's exciting and different. Partner with us for a video strategy that makes your brand really shine and gets people talking. `,
+      img: marketingTen,
+    },
+    {
+      name: "PUBLIC RELATIONS",
+      desc: " Building a positive brand image is crucial for long-term success. Our PR services include media relations, press releases, and strategic communications to enhance your brand's reputation and establish thought leadership in your industry. We work with media outlets and influencers to secure media coverage and generate positive publicity for your business.",
+      img: marketingEleven,
+    },
+    {
+      name: "VIDEO MARKETING:",
+      desc: ` Videos are a strong way to connect with your audience. Unlike text or pictures, videos engage multiple senses, showing your products or services in action, telling a story, and creating a deeper emotional connection with your viewers. 
+      At Nexusphere We harness the power of video to showcase the unique features and benefits of your web3 or tech project. Our video marketing services include scriptwriting, video production, editing, and promotion, ensuring that your message is effectively conveyed to your target audience through captivating and informative videos. Our video services are: Whiteboard Animation, 3D animation, Live action videos, Motion graphics. `,
+      img: marketingTwelve,
+    },
+  ];
   return (
     <Main>
       <div className="nav h-32">
         <Navbar />
       </div>
-      <Hero />
+      <Hero
+        title="Our Services"
+        desc="Our services offers cutting-edge solutions tailored to meet your needs. From innovative technology solutions, we strive to exceed expectations and drive success for your project.  With a focus on quality, reliability, and innovation, we’re here to help you thrive
+ in today’s dynamic marketplace."
+      />
       <div className="nav">
         <img src={eye} alt="" />
       </div>
@@ -51,17 +134,16 @@ const Content = () => {
       </div>
       <div className="nav lg:pb-40 pb-20">
         <div className=" services grid lg:grid-cols-3 gap-5 lg:px-36 px-5 relative">
-          {[2, 3, , 4, 3, , 3, 3, 3, , 3, 3, 3, 2, 2].map((val) => (
-            <div className="box flex flex-col items-center">
-              <img src={serviceone} alt="" srcset="" className="flex " />
-              <p className="text-white text-xl font-medium py-5">SEO</p>
-              <p className="text-white text-sm">
-                We optimize your website and online presence to rank higher in
-                search engine results. By conducting thorough keyword research,
-                optimizing on-page elements, and building high-quality
-                backlinks, we ensure that your web3 or tech project gets
-                discovered by your target audience.
+          {data.map((val, i) => (
+            <div
+              className="box flex flex-col items-center"
+              style={{ height: i > 8 ? "539px" : "399px" }}
+            >
+              <img src={val.img} alt="" srcset="" className="flex mt-5" />
+              <p className="text-white text-xl font-medium py-5 text-center">
+                {val.name}
               </p>
+              <p className="text-white text-sm">{val.desc}</p>
             </div>
           ))}
         </div>
@@ -71,8 +153,9 @@ const Content = () => {
       </div>
       <div className="nav">
         <div className="pt-16 lg:pt-36 grid lg:grid-cols-2 items-start">
-          <div className="lg:flex justify-center hidden">
+          <div className="lg:flex justify-center hidden relative">
             <img src={women} alt="" srcset="" />
+            <img src={star} alt="" className="absolute top-42 left-24" />
           </div>
           <div className="specificWidth lg:pt-20 pt-0 lg:px-0 px-2">
             <p className="textUnderLine">
@@ -149,15 +232,15 @@ const Content = () => {
             </p>
           </div>
           <div className="lg:flex justify-center relative hidden">
-            <img src={women} alt="" srcset="" className="z-10" />
+            <img src={branding} alt="" srcset="" className="z-10" />
             <img src={rollingBox} alt="" srcset="" className="rollingBox z-1" />
           </div>
         </div>
       </div>
       <div className="nav">
         <div className="grid lg:grid-cols-3 py-12 px-5 lg:px-36 gap-5">
-          {[1, 3, 4].map((item) => (
-            <Blog height={"881px"} />
+          {blogs.slice(0, 3).map((item) => (
+            <Blog height={"613px"} item={item} />
           ))}
         </div>
         <div className="flex justify-center py-10">
@@ -202,8 +285,8 @@ const Content = () => {
       </div>
       <div className="nav">
         <div className="grid lg:grid-cols-3 grid-cols-1 py-12 lg:px-36 px-5 gap-5">
-          {[1, 3, 4].map((item) => (
-            <Blog height={"881px"} />
+          {blogs.slice(3, 6).map((item) => (
+            <Blog height={"881px"} item={item} />
           ))}
         </div>
         <div className="flex justify-center py-10">
@@ -230,26 +313,32 @@ const Content = () => {
               Here's a closer look at what sets our offerings apart:
             </p>
           </div>
-          <div className="lg:block hidden">
+          <div className="lg:block hidden relative">
             <img src={consultation2} alt="" srcset="" className="mt-16" />
+            <img
+              src={star}
+              alt=""
+              className="absolute top-10"
+              style={{ left: "-220px" }}
+            />
           </div>
         </div>
         <div className="g grid lg:grid-cols-3 lg:px-32 px-5 gap-5 relative ">
-          {[1, 2, 3, 4, 4, 5].map((val) => (
+          {servicesTwo.map((val) => (
             <div className="box3 flex flex-col px-5 justify-center items-center">
-              <p className="text-white font-medium pb-6">COMPREHENSIVE</p>
-              <p className="text-white text-sm">
-                Our team boasts in-depth knowledge of the Web3 landscape,
-                covering blockchain development, smart contracts, decentralized
-                applications (DApps), and more. We're not just consultants –
-                we're your partners in navigating the complexities of this
-                transformative technology.
-              </p>
+              <div>
+                <p className="text-white text-center font-medium pb-6">
+                  {val.title}
+                </p>
+                <p className="text-white text-sm">{val.desc}</p>
+              </div>
             </div>
           ))}
         </div>
       </div>
       <div className="nav lg:pt-14 funding flex flex-col items-center justify-center">
+        {/* <img src={gradiente} className="gradient-4-funding" /> */}
+        <img src={Ellipse3} className="gradient-4-funding" />
         <p className="text-white textUnderLine">
           <span className="textUnderLine2">FUNDING</span>
         </p>
@@ -259,7 +348,7 @@ const Content = () => {
           various <br /> funding sources, develop funding strategies, and craft
           compelling funding proposals.
         </p>
-        <div className="flex justify-center lg:py-10 py-3">
+        <div className="flex justify-center z-10 lg:py-10 py-3">
           <GradientButton height={"881px"} />
         </div>
       </div>
@@ -270,24 +359,12 @@ const Content = () => {
 
 export default Content;
 
-const Blog = ({ height }) => {
+const Blog = ({ height, item }) => {
   return (
     <div className="box2" style={{ height: height }}>
-      <img src={blog} alt="" className="w-full h-80 object-cover" />
-      <p className="text-center text-white py-8 text-xl">UIUX MASTERY</p>
-      <p className="text-white px-5 text-sm">
-        At Nexusphere, we make project management a breeze. Our streamlined
-        project management services are designed to keep your initiatives on
-        track without unnecessary complications. We handle the nitty-gritty
-        details of project coordination, timelines, and task assignments, so you
-        can focus on what you do best. Whether you're launching a new campaign,
-        developing a website, or diving into a marketing strategy, our project
-        management services ensure smooth sailing from start to finish. Our goal
-        is simple – to take the stress out of project management and let you
-        concentrate on achieving your objectives. Trust Nexusphere to be your
-        reliable partner in keeping things organized, efficient, and successful.
-        Nexusphere – Simplifying Project Management for Your Success.
-      </p>
+      <img src={item.img} alt="" className="w-full h-80 object-cover" />
+      <p className="text-center text-white py-8 text-xl">{item.title}</p>
+      <p className="text-white px-5 text-sm">{item.desc}</p>
     </div>
   );
 };
@@ -295,14 +372,25 @@ const Blog = ({ height }) => {
 const Main = styled.div`
   .funding {
     height: 757px;
+    position: relative;
+    /* background: rgb(177, 111, 177);
+    background: radial-gradient(
+      circle,
+      transparent 0%,
+      rgba(177, 111, 177, 0.5) 50%,
+      rgba(37, 37, 37, 1) 100%
+    ); */
     @media (max-width: 769px) {
       height: 500px;
     }
   }
+  .gradient-4-funding {
+    position: absolute;
+  }
   .g {
     top: 50px;
     @media (max-width: 769px) {
-      top: 0px;
+      left: 400px;
     }
   }
   .clipArt {
@@ -350,10 +438,9 @@ const Main = styled.div`
     }
   }
   .box {
-    height: 373px;
     box-shadow: 0px 4px 12px 2px #0000002e;
     background: #3b3b3b80;
-    padding: 45.5px 20px;
+    padding: 10px 20px;
   }
   .box2 {
     box-shadow: 0px 4px 12px 2px #0000002e;
