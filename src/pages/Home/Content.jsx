@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import React, { useRef } from "react
 import styled from "styled-components";
 import Navbar from "../../components/Navbar";
 
@@ -43,12 +44,15 @@ import Ellipse2 from "../../assets/Ellipse2.png";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 import { Carousel } from "react-responsive-carousel";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Content = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
   const data = [
     "Decentralized finance (DeFi) platforms",
     "Non-fungible token (NFT) projects",
@@ -92,7 +96,6 @@ const Content = () => {
       text: "Our approach to offline marketing goes beyond traditional strategies . We immerse ourselves in representing your brand as ambassadors, building personal relationship ...",
     },
   ];
-
 
   const [prices, setPrices] = useState({
     "BTC": 60081.69,
@@ -144,6 +147,28 @@ const Content = () => {
       clearInterval(intervalId); // Clear interval when unmounting
     };
   }, []);
+  
+  const companies = [
+    {
+      img: Frame1,
+    },
+    {
+      img: Frame2,
+    },
+    {
+      img: Frame3,
+    },
+    {
+      img: Frame4,
+    },
+    {
+      img: Frame5,
+    },
+    {
+      img: Frame6,
+    },
+  ];
+  
   return (
     <Main>
       <div className="hero relative">
@@ -152,6 +177,7 @@ const Content = () => {
           src={HEROMAGE}
           alt=""
           className="absolute top-0 heroimg w-full h-full"
+          loading="lazy"
         />
         <div class="cube absolute box">
           <div class="face top"></div>
@@ -166,7 +192,7 @@ const Content = () => {
           <motion.p
             initial={{ x: "-200%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 2, delay: 2 }}
+            transition={{ duration: 2, delay: 2.5 }}
             className="gradient_color font-bold lg:text-8xl text-3xl"
           >
             Get the best <br /> marketing & PR <br /> for your project
@@ -175,10 +201,11 @@ const Content = () => {
             Tech & Web3
           </p>
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={{ y: 200, opacity: 0 }}
             animate={{
               opacity: 1,
               delay: 3,
+              y: 0,
             }}
             transition={{ duration: 2, delay: 2 }}
           >
@@ -219,8 +246,27 @@ const Content = () => {
         <img src={Framew} alt="" className="absolute Framew z-1" />
         <img src={Ellipse2} alt="" className="absolute right-0 bottom-0" />
 
-        <div className="grid md:grid-cols-2 lg:px-24 px-5  pt-6 about lg:pb-32 pb-10">
-          <div className="lg:mr-8 lg:mb-0 mb-5 flex flex-col items-center">
+        <div
+          initial={{ x: "-100%", opacity: 0 }}
+          animate={{
+            opacity: 1,
+            delay: 3,
+            x: 0,
+          }}
+          transition={{ duration: 2, delay: 2 }}
+          className="grid md:grid-cols-2 lg:px-24 px-5  pt-6 about lg:pb-32 pb-10"
+        >
+          <motion.div
+            className="lg:mr-8 lg:mb-0 mb-5 flex flex-col items-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 1.5 }}
+            variants={{
+              visible: { opacity: 1, x: 0 },
+              hidden: { opacity: 0, x: "-100%" },
+            }}
+          >
             <p className="text-center lg:text-5xl text-2xl text-white">
               Welcome to Nexusphere
             </p>
@@ -239,8 +285,19 @@ const Content = () => {
               audience through a dynamic blend of both <br /> digital and
               traditional channels.
             </p>
-          </div>
-          <img src={youtubeT} alt="" className="z-10" />
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 1.5 }}
+            variants={{
+              visible: { opacity: 1, x: 0 },
+              hidden: { opacity: 0, x: "100%" },
+            }}
+          >
+            <img src={youtubeT} alt="" className="z-10" />
+          </motion.div>
         </div>
         <div className="brands">
           <p className="text-white text-center text-xl font-medium pb-12 pt-1">
@@ -267,16 +324,43 @@ const Content = () => {
           <p className="pt-8 pb-5 text-center lg:text-4xl text-2xl text-white">
             Exceptional services we render
           </p>
-          <p className="text-center pb-32 lg:text-lg text-xs text-white">
+          <motion.p
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 1.5 }}
+            variants={{
+              visible: { opacity: 1, y: 0, x: 0 },
+              hidden: { opacity: 0, y: "100%", x: "-100%" },
+            }}
+            className="text-center pb-32 lg:text-lg text-xs text-white"
+          >
             Nexusphere offers a diverse array of expertly crafted services,
             seamlessly merging creativity and technology to deliver <br />{" "}
             solutions that exceed expectations and drive success to your
             project.
-          </p>
+          </motion.p>
         </div>
+        yioooo
         <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:px-36 px-8 gap-5 pb-36">
-          {services.map((val) => (
-            <div className="service flex flex-col items-center">
+          {services.map((val, i) => (
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileInView="visible"
+              variants={{
+                hidden: {
+                  x: i == 0 || i == 3 ? "-100%" : i == 2 || i == 5 ? "100%" : 0,
+                  y: i == 1 || i == 4 ? "-20%" : 0,
+                  opacity: 0,
+                },
+
+                visible: { x: 0, opacity: 1, y: 0 },
+              }}
+              viewport={{ once: true }}
+              initial="hidden"
+              transition={{ duration: 1, delay: 0.5 }}
+              className="hover service flex flex-col items-center"
+            >
               <img src={val.img} alt="" className="w-full" />
               <div className=" px-6  mb-5">
                 <p className="text-center pt-5 text-xl text-white">
@@ -291,7 +375,7 @@ const Content = () => {
                   Learn more
                 </Button>
               </Link>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -311,73 +395,55 @@ const Content = () => {
         </p>
         <div className=" pt-24">
           <div className="grid lg:grid-cols-3 place-items-center lg:px-36">
-            <div className="borderRight borderBottom h-60 w-full flex flex-col items-center justify-center">
-              <div>
-                <img src={Frame1} alt="" />
-                <div className="flex items-center">
-                  <p className="text-white py-10 pr-3">Learn more</p>
-                  <img src={arrow_forward_ios} alt="" />
-                </div>{" "}
-              </div>{" "}
-            </div>
-            <div className="borderRight borderBottom  h-60 w-full flex flex-col items-center justify-center">
-              <div>
-                <img src={Frame2} alt="" />
-                <div className="flex items-center">
-                  <p className="text-white py-10 pr-3">Learn more</p>
-                  <img src={arrow_forward_ios} alt="" />
-                </div>{" "}
-              </div>{" "}
-            </div>
-            <div className="borderBottom  h-60 w-full flex flex-col items-center justify-center">
-              <div>
-                <img src={Frame3} alt="" />
-                <div className="flex items-center">
-                  <p className="text-white py-10 pr-3">Learn more</p>
-                  <img src={arrow_forward_ios} alt="" />
-                </div>{" "}
-              </div>{" "}
-            </div>
-            <div className="borderRight  h-60 w-full flex flex-col items-center justify-center">
-              <div>
-                <img src={Frame4} alt="" />
-                <div className="flex items-center">
-                  <p className="text-white py-10 pr-3">Learn more</p>
-                  <img src={arrow_forward_ios} alt="" />
-                </div>{" "}
-              </div>{" "}
-            </div>
-            <div className="borderRight  h-60 w-full flex flex-col items-center justify-center">
-              <div>
-                <img src={Frame5} alt="" />
-                <div className="flex items-center">
-                  <p className="text-white py-10 pr-3">Learn more</p>
-                  <img src={arrow_forward_ios} alt="" />
-                </div>{" "}
-              </div>{" "}
-            </div>
-            <div className="h-60 w-full flex flex-col items-center justify-center">
-              <div>
-                <img src={Frame6} alt="" />
-                <div className="flex items-center">
-                  <p className="text-white py-10 pr-3">Learn more</p>
-                  <img src={arrow_forward_ios} alt="" />
-                </div>{" "}
-              </div>{" "}
-            </div>
+            {companies.map((val, i) => (
+              <div
+                className={`${i == 2 || i == 5 ? "" : "borderRight"} ${
+                  i == 3 || i == 4 || i == 5 ? "" : "borderBottom"
+                } h-60 w-full flex flex-col items-center justify-center`}
+              >
+                <motion.div
+                  variants={{
+                    hidden: {
+                      y: "-30%",
+                      opacity: 0,
+                    },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  whileInView={"visible"}
+                  initial="hidden"
+                  transition={{ duration: 1, delay: 0.5 }}
+                >
+                  <img src={val.img} alt="" />
+                  <div className="flex items-center">
+                    <p className="text-white py-10 pr-3">Learn more</p>
+                    <img src={arrow_forward_ios} alt="" />
+                  </div>{" "}
+                </motion.div>{" "}
+              </div>
+            ))}
           </div>
           <div className="projects">
-            <div className="flex flex-col items-center">
+            <motion.div
+              className="flex flex-col items-center"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              variants={{
+                visible: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: "-30%" },
+              }}
+            >
               <p className="text-white text-center lg:text-4xl text-2xl py-5">
                 What types of project does <br /> Nexusphere work with?
               </p>
               <p className=" text-center lg:pb-20 pb-5">
                 We work with a variety of web3 and tech projects, including
               </p>
-            </div>
+            </motion.div>
             <div className="grid lg:grid-cols-4 md:grid-cols-2 lg:px-48 gap-5 lg:pb-20 pb-10 place-items-center">
               {data.map((val) => (
-                <div className="purpleBox flex items-center justify-center lg:mb-10">
+                <div className="purpleBox hover:bg-white flex items-center justify-center lg:mb-10 z-10">
                   <p className="text-white text-center text-xs ">{val}</p>
                 </div>
               ))}
@@ -614,6 +680,11 @@ const Main = styled.div`
     border-radius: 10px;
     width: 239px;
   }
+  .purpleBox:hover {
+    background-color: white;
+    color: beige;
+  }
+
   .borderLeft {
     border-left: 2px solid rgba(255, 255, 255, 1);
     /* border-bottom: 2px solid rgba(255, 255, 255, 1); */
