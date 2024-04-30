@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import looper1 from "../assets/Looper-2.png";
+import { motion } from "framer-motion";
 
 const Gradient = () => {
   const data = [
@@ -19,12 +20,39 @@ const Gradient = () => {
   return (
     <Main className="nav relative pt-20 pb-40 overflow-hidden flex flex-col items-center">
       <img src={looper1} alt="" className=" imgLooper lg:block hidden " />
-      <p className="text-center lg:text-4xl text-xl heading text-white pb-10">
+      <motion.p
+        className="text-center lg:text-4xl text-xl heading text-white pb-10"
+        initial="hidden"
+        whileInView="visible"
+        variants={{
+          hidden: {
+            y: "-100%",
+            opacity: 0,
+          },
+          visible: { y: 0, opacity: 1 },
+        }}
+        transition={{ delay: 1, duration: 2 }}
+      >
         Marketing services for tech and web3 <br /> project/ product.
-      </p>
+      </motion.p>
       <div className="grid lg:grid-cols-2 grid-cols-2 lg:gap-x-20 gap-y-5">
         {data.map((val) => (
-          <div className="gradient">{val}</div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={{
+              hidden: {
+                x: "-40%",
+                opacity: 0,
+              },
+              visible: { x: 0, opacity: 1 },
+            }}
+            transition={{ delay: 0.8 }}
+            className="gradient"
+            whileHover={{ scaleX: 1.1 }}
+          >
+            <div> {val}</div>
+          </motion.div>
         ))}
       </div>
     </Main>
