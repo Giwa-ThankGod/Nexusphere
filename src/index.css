@@ -46,3 +46,23 @@
 ul {
   list-style-type: circle;
 }
+
+/* Custom CSS for marquee effect */
+.marquee {
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflowing text */
+  animation: marquee 30s linear infinite; /* Apply animation with desired duration */
+}
+
+.marquee-container:hover {
+  animation-play-state: paused; /* Pause the animation on hover */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
