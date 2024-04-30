@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "../../components/Navbar";
+
 import GradientButton from "../../components/GradientButton";
 import HEROMAGE from "../../assets/HEROMAGE.png";
 import box from "../../assets/box.png";
@@ -38,8 +39,8 @@ import Footer from "../../components/Footer";
 import Ellipse1 from "../../assets/Ellipse1.png";
 import Ellipse2 from "../../assets/Ellipse2.png";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+
 import { Carousel } from "react-responsive-carousel";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import { Link } from "react-router-dom";
@@ -389,11 +390,21 @@ const Content = () => {
         </div>
         <div className="flex justify-center px-5 pb-40">
           <div className="flex">
-            <Link to="https://www.facebook.com/profile.php?id=61557765987604"><img srcSet={facebookName} alt="" className="social-img" /></Link>
-          <Link to="https://www.instagram.com/sailwith_nexusphere?igsh=MzRlODBiNWFlZA=="><img srcSet={instaName} alt="" className="social-img" /></Link>
-          <Link to="/"><img srcSet={linkedinName} alt="" className="social-img" /></Link>
-          <Link to="/"><img srcSet={telegramName} alt="" className="social-img" /></Link>
-          <Link to="https://x.com/nexusphere1?s=21"><img srcSet={twitterName} alt="" className="social-img" /></Link>
+            <Link to="https://www.facebook.com/profile.php?id=61557765987604">
+              <img srcSet={facebookName} alt="" className="social-img mx-2" />
+            </Link>
+            <Link to="https://www.instagram.com/sailwith_nexusphere?igsh=MzRlODBiNWFlZA==">
+              <img srcSet={instaName} alt="" className="social-img mx-2" />
+            </Link>
+            <Link to="/">
+              <img srcSet={linkedinName} alt="" className="social-img mx-2" />
+            </Link>
+            <Link to="/">
+              <img srcSet={telegramName} alt="" className="social-img mx-2" />
+            </Link>
+            <Link to="https://x.com/nexusphere1?s=21">
+              <img srcSet={twitterName} alt="" className="social-img mx-2" />
+            </Link>
           </div>
         </div>
       </div>
