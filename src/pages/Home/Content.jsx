@@ -42,6 +42,8 @@ import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
+import { Link } from "react-router-dom";
+
 const Content = () => {
   const data = [
     "Decentralized finance (DeFi) platforms",
@@ -387,11 +389,11 @@ const Content = () => {
         </div>
         <div className="flex justify-center px-5 pb-40">
           <div className="flex">
-            <img src={facebookName} alt="" className="social-img mx-2" />
-            <img src={instaName} alt="" className="social-img mx-2" />
-            <img src={linkedinName} alt="" className="social-img mx-2" />
-            <img src={telegramName} alt="" className="social-img mx-2" />
-            <img src={twitterName} alt="" className="social-img mx-2" />
+            <Link to="https://www.facebook.com/profile.php?id=61557765987604"><img srcSet={facebookName} alt="" className="social-img" /></Link>
+          <Link to="https://www.instagram.com/sailwith_nexusphere?igsh=MzRlODBiNWFlZA=="><img srcSet={instaName} alt="" className="social-img" /></Link>
+          <Link to="/"><img srcSet={linkedinName} alt="" className="social-img" /></Link>
+          <Link to="/"><img srcSet={telegramName} alt="" className="social-img" /></Link>
+          <Link to="https://x.com/nexusphere1?s=21"><img srcSet={twitterName} alt="" className="social-img" /></Link>
           </div>
         </div>
       </div>

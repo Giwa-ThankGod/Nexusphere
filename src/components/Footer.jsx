@@ -9,6 +9,8 @@ import Email from "../assets/Email.png";
 import phone from "../assets/footericons/Phone.png";
 import location from "../assets/footericons/Mark.png";
 
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <Main className="nav lg:pl-24 pl-5 lg:pr-20 pr-5">
@@ -20,22 +22,22 @@ const Footer = () => {
             media, we craft tailored strategies for impactful online presence.
           </p>
           <div className="flex items-center py-6">
-            <img src={instagram} alt="" srcset="" className="pr-6" />
-            <img src={Facebook} alt="" srcset="" className="pr-6" />
-            <img src={twitter} alt="" srcset="" className="pr-6" />
-            <img src={linkedin} alt="" srcset="" className="pr-6" />
+            <Link to="https://www.instagram.com/sailwith_nexusphere?igsh=MzRlODBiNWFlZA=="><img srcSet={instagram} alt="" className="pr-6" /></Link>
+            <Link to="https://www.facebook.com/profile.php?id=61557765987604"><img srcSet={Facebook} alt="" className="pr-6" /></Link>
+            <Link to="https://x.com/nexusphere1?s=21"><img srcSet={twitter} alt="" className="pr-6" /></Link>
+            <Link to=""><img srcSet={linkedin} alt="" className="pr-6" /></Link>
           </div>
           <p className="lg:text-lg text-sm">Subscribe to our newsletter </p>
           <div className="flex pt-5 relative">
             <input
               type="text"
-              className="w-full p-5 "
+              className="w-full p-5 text-black"
               placeholder="Enter your email"
             />
             <input
-              type="text"
-              className=" text-lg absolute font-semibold text-center gradient top-7 right-4"
-              placeholder="Subscribe"
+              type="button"
+              className="text-lg text-gray-100 cursor-pointer absolute font-semibold text-center gradient top-7 right-4"
+              value="Subscribe"
             />
           </div>
         </div>
@@ -45,11 +47,11 @@ const Footer = () => {
               <p className="title text-xl lg:mt-0 mt-3 lg:pb-10 pb-3 font-bold responsiveLinks">
                 Support
               </p>
-              <p className="pb-2 responsiveLinks">About</p>
-              <p className="pb-2 responsiveLinks">Contact us</p>
-              <p className="pb-2 responsiveLinks">Careers</p>
-              <p className="pb-2 responsiveLinks">Services</p>
-              <p className="responsiveLinks">Blog</p>
+              <Link to="/about"><p className="pb-2 responsiveLinks">About</p></Link>
+              <Link to="/contact"><p className="pb-2 responsiveLinks">Contact us</p></Link>
+              <Link to="/"><p className="pb-2 responsiveLinks">Careers</p></Link>
+              <Link to="/services"><p className="pb-2 responsiveLinks">Services</p></Link>
+              <Link to="/"><p className="responsiveLinks">Blog</p></Link>
             </div>
           </div>
           <div className="flex justify-center">
