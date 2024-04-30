@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import React, { useRef } from "react
 import styled from "styled-components";
 import Navbar from "../../components/Navbar";
 
