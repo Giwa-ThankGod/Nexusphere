@@ -14,7 +14,7 @@ const Footer = () => {
     <Main className="nav lg:pl-24 pl-5 lg:pr-20 pr-5">
       <div className="main pt-32 pb-7">
         <div className="firstSection lg:mb-0 pb-10">
-          <img src={logo2} alt="" />
+          <img src={logo2} alt="" className="lg:w-20 lg:h-20 " />
           <p className="pt-6 lg:text-lg text-sm">
             Elevate your brand with our expert in marketing. From SEO to social
             media, we craft tailored strategies for impactful online presence.

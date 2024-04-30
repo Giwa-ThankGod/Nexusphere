@@ -37,6 +37,10 @@ import Gradient from "../../components/Gradient";
 import Footer from "../../components/Footer";
 import Ellipse1 from "../../assets/Ellipse1.png";
 import Ellipse2 from "../../assets/Ellipse2.png";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Content = () => {
   const data = [
@@ -91,17 +95,37 @@ const Content = () => {
           alt=""
           className="absolute top-0 heroimg w-full h-full"
         />
-        <img src={box} alt="" className="absolute box" />
+        <div class="cube absolute box">
+          <div class="face top"></div>
+          <div class="face bottom"></div>
+          <div class="face left"></div>
+          <div class="face right"></div>
+          <div class="face front"></div>
+          <div class="face back"></div>
+        </div>{" "}
         <img src={LooperGroup} alt="" className="absolute LooperGroup" />
-
         <div className="flex justify-center items-center flex-col text-center pt-36 ">
-          <p className="gradient_color font-bold lg:text-8xl text-3xl">
+          <motion.p
+            initial={{ x: "-200%", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 2, delay: 2 }}
+            className="gradient_color font-bold lg:text-8xl text-3xl"
+          >
             Get the best <br /> marketing & PR <br /> for your project
-          </p>
+          </motion.p>
           <p className="lg:text-4xl text-xl lg:pt-6 pt-2 lg:pb-28 pb-5 text-white">
             Tech & Web3
           </p>
-          <GradientButton />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              delay: 3,
+            }}
+            transition={{ duration: 2, delay: 2 }}
+          >
+            <GradientButton />
+          </motion.div>
           <div className="flex absolute bottom-10 overflow-scroll">
             <img src={Bitcoin} alt="" srcset="" className="social-img2" />
             <img src={eth} alt="" srcset="" className="social-img2" />
@@ -119,16 +143,16 @@ const Content = () => {
 
         <div className="grid md:grid-cols-2 lg:px-24 px-5  pt-6 about lg:pb-32 pb-10">
           <div className="lg:mr-8 lg:mb-0 mb-5 flex flex-col items-center">
-            <p className="text-center lg:text-4xl text-2xl text-white">
+            <p className="text-center lg:text-5xl text-2xl text-white">
               Welcome to Nexusphere
             </p>
-            <p className="text-white text-base flex justify-start pt-5 pb-3">
+            <p className="text-white text-lg flex justify-start pt-5 pb-3">
               <span>
                 Where innovation meets impact, and your brand <br /> journey{" "}
                 takes center stage.{" "}
               </span>
             </p>
-            <p className="text-white text-base justify-start pt-5 pb-3">
+            <p className="text-white text-lg justify-start pt-5 pb-3">
               <span style={{ color: "#FF99FF" }}>
                 What sets us apart is our unique selling point:
               </span>{" "}
@@ -165,7 +189,7 @@ const Content = () => {
           <p className="pt-8 pb-5 text-center lg:text-4xl text-2xl text-white">
             Exceptional services we render
           </p>
-          <p className="text-center pb-32 lg:text-sm text-xs text-white">
+          <p className="text-center pb-32 lg:text-lg text-xs text-white">
             Nexusphere offers a diverse array of expertly crafted services,
             seamlessly merging creativity and technology to deliver <br />{" "}
             solutions that exceed expectations and drive success to your
@@ -175,18 +199,20 @@ const Content = () => {
         <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:px-36 px-8 gap-5 pb-36">
           {services.map((val) => (
             <div className="service flex flex-col items-center">
-              <img src={val.img} alt="" />
+              <img src={val.img} alt="" className="w-full" />
               <div className=" px-6  mb-5">
                 <p className="text-center pt-5 text-xl text-white">
                   {val.title}
                 </p>
-                <p className="text-center text-white borderBottom h-32 text-sm py-5">
+                <p className="text-center text-lg text-white borderBottom h-32 text-sm py-5">
                   {val.text}
                 </p>
               </div>
-              <Button className="rounded-2xl lg:mb-12 mb-5 py-2 px-2 text-white text-base font-500 font-semibold">
-                Learn more
-              </Button>
+              <Link to="/contact">
+                <Button className="rounded-2xl lg:mb-12 mb-5 py-2 px-5 text-white text-xl font-500 font-semibold">
+                  Learn more
+                </Button>
+              </Link>
             </div>
           ))}
         </div>
@@ -299,37 +325,50 @@ const Content = () => {
             us
           </p>
         </div>
-        <div className="flex overflow-x-scroll">
-          {[1].map((val) => (
-            <div className="reviews flex flex-col justify-ceneter mx-3 px-5 pt-10">
-              <div className="flex justify-between items-center">
-                <div className="flex items-center">
-                  <img
-                    src={woman}
-                    alt=""
-                    className="lg:w-16 lg:h-16 w-10 h-10"
-                  />
-                  <p className="text-black lg:text-base text-sm pl-2">
-                    Jassica homes{" "}
+        <div className="">
+          <Carousel
+            showArrows={true}
+            showStatus={false}
+            infiniteLoop={true}
+            centerMode={true}
+            autoPlay={true}
+            stopOnHover={true}
+          >
+            {[1, 2, 3].map((val) => (
+              <div className="flex justify-center">
+                <div className="reviews flex flex-col justify-ceneter mx-3 px-5 pt-10">
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center">
+                      <div>
+                        <img
+                          src={woman}
+                          alt=""
+                          className="lg:w-16 lg:h-16 w-10 h-10"
+                        />
+                      </div>
+                      <p className="text-black lg:text-base text-sm pl-2">
+                        Jassica homes{" "}
+                      </p>
+                    </div>
+                    <div>
+                      <img src={rating} alt="" className="lg:h-6 h-2" />
+                    </div>
+                  </div>
+                  <p className="lg:py-5 py-2 lg:text-base text-left text-sm">
+                    Lorem ipsum dolor sit amet consectetur. Nunc purus at diam
+                    massa fames lorem diam. Lorem integer tempus egestas quisque
+                    leo sed nec pretium faucibus. Maecenas scelerisque.
+                  </p>
+                  <p
+                    style={{ color: "#00000066" }}
+                    className="lg:text-base text-xs text-left"
+                  >
+                    BINANCE AFRICA
                   </p>
                 </div>
-                <div>
-                  <img src={rating} alt="" className="lg:h-6 h-2" />
-                </div>
               </div>
-              <p className="lg:py-5 py-2 lg:text-base text-sm">
-                Lorem ipsum dolor sit amet consectetur. Nunc purus at diam massa
-                fames lorem diam. Lorem integer tempus egestas quisque leo sed
-                nec pretium faucibus. Maecenas scelerisque.
-              </p>
-              <p
-                style={{ color: "#00000066" }}
-                className="lg:text-base text-xs"
-              >
-                BINANCE AFRICA
-              </p>
-            </div>
-          ))}
+            ))}
+          </Carousel>
         </div>
       </div>
       <div style={{ background: "#2A1745" }}>
@@ -346,12 +385,14 @@ const Content = () => {
             Future of your project together.
           </p>
         </div>
-        <div className="grid grid-cols-5 place-items-center lg:px-96 px-5 pb-40">
-          <img src={facebookName} alt="" className="social-img" />
-          <img src={instaName} alt="" className="social-img" />
-          <img src={linkedinName} alt="" className="social-img" />
-          <img src={telegramName} alt="" className="social-img" />
-          <img src={twitterName} alt="" className="social-img" />
+        <div className="flex justify-center px-5 pb-40">
+          <div className="flex">
+            <img src={facebookName} alt="" className="social-img mx-2" />
+            <img src={instaName} alt="" className="social-img mx-2" />
+            <img src={linkedinName} alt="" className="social-img mx-2" />
+            <img src={telegramName} alt="" className="social-img mx-2" />
+            <img src={twitterName} alt="" className="social-img mx-2" />
+          </div>
         </div>
       </div>
       <Footer />
@@ -366,6 +407,94 @@ const Button = styled.button`
 `;
 
 const Main = styled.div`
+  @keyframes turn {
+    from {
+      transform: rotate3d(0, 0, 0, 0);
+    }
+    to {
+      transform: rotate3d(1, 1, 0, 360deg);
+    }
+  }
+
+  .cube {
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    animation: turn 5s linear infinite;
+    @media (max-width: 768px) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .face {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(92.73deg, #3a008c 26.15%, #8543e2 117.44%);
+    border: 2px solid black;
+    position: absolute;
+    /* opacity: 0.5; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    transition: transform 500ms;
+    @media (max-width: 1130px) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .front {
+    transform: translateZ(50px);
+    @media (max-width: 768px) {
+      transform: translateZ(25px);
+    }
+  }
+
+  .back {
+    transform: translateZ(-50px) rotateY(180deg);
+    @media (max-width: 768px) {
+      transform: translateZ(-25px) rotateY(180deg);
+    }
+  }
+
+  .left {
+    transform: translateX(-50px) rotateY(-90deg);
+    @media (max-width: 768px) {
+      transform: translateX(-25px) rotateY(-90deg);
+    }
+  }
+
+  .right {
+    transform: translateX(50px) rotateY(90deg);
+    @media (max-width: 768px) {
+      transform: translateX(25px) rotateY(90deg);
+    }
+  }
+
+  .top {
+    transform: translateY(-50px) rotateX(90deg);
+    @media (max-width: 768px) {
+      transform: translateY(-25px) rotateX(90deg);
+    }
+  }
+
+  .bottom {
+    transform: translateY(50px) rotateX(-90deg);
+    @media (max-width: 768px) {
+      transform: translateY(25px) rotateX(-90deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cube {
+      animation: none;
+      transform: rotate3d(1, 1, 0, 45deg);
+    }
+  }
+
   .social-img {
     height: 118px;
     width: 120px;
@@ -382,7 +511,7 @@ const Main = styled.div`
     }
   }
   .reviews {
-    height: 270px;
+    height: 270px !important;
     border-radius: 47.65px;
     width: 773.47px !important;
     background-color: white;
@@ -411,7 +540,11 @@ const Main = styled.div`
   }
 
   .service {
+    width: 373px;
     background: linear-gradient(119.65deg, #110e15 6.11%, #5d445d 100.73%);
+    @media (max-width: 700px) {
+      width: auto;
+    }
   }
   .borderBottom {
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
@@ -463,13 +596,13 @@ const Main = styled.div`
       left: -100px;
     }
     .box {
-      bottom: 170px;
-      right: 100px;
-      width: 206.31px;
+      bottom: 200px;
+      right: 200px;
+      /* width: 206.31px; */
 
       @media (max-width: 700px) {
         bottom: 230px;
-        right: 0px;
+        right: 50px;
         /* width: 101px; */
       }
     }

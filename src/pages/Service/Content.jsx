@@ -157,7 +157,7 @@ const Content = () => {
             <img src={women} alt="" srcset="" />
             <img src={star} alt="" className="absolute top-42 left-24" />
           </div>
-          <div className="specificWidth lg:pt-20 pt-0 lg:px-0 px-2">
+          <div className="lg:pr-24 pr-5  lg:pt-20 pt-0 lg:px-0 px-2">
             <p className="textUnderLine">
               <span className="textUnderLine2 text-white">
                 OUR AFRICA OFFLINE SERVICE:
@@ -233,7 +233,12 @@ const Content = () => {
           </div>
           <div className="lg:flex justify-center relative hidden">
             <img src={branding} alt="" srcset="" className="z-10" />
-            <img src={rollingBox} alt="" srcset="" className="rollingBox z-1" />
+            <img
+              src={rollingBox}
+              alt=""
+              srcset=""
+              className="rollingBox right-0 z-1"
+            />
           </div>
         </div>
       </div>
@@ -323,7 +328,7 @@ const Content = () => {
             />
           </div>
         </div>
-        <div className="g grid lg:grid-cols-3 lg:px-32 px-5 gap-5 relative ">
+        <div className="g lg:pt-0 pt-5 grid lg:grid-cols-3 grid-cols-1 place-self-center gap-5 relativec lg:px-0 px-10">
           {servicesTwo.map((val) => (
             <div className="box3 flex flex-col px-5 justify-center items-center">
               <div>
@@ -338,7 +343,7 @@ const Content = () => {
       </div>
       <div className="nav lg:pt-14 funding flex flex-col items-center justify-center">
         {/* <img src={gradiente} className="gradient-4-funding" /> */}
-        <img src={Ellipse3} className="gradient-4-funding" />
+        <img src={Ellipse3} className="gradient-4-funding w-full mb-10" />
         <p className="text-white textUnderLine">
           <span className="textUnderLine2">FUNDING</span>
         </p>
@@ -373,24 +378,19 @@ const Main = styled.div`
   .funding {
     height: 757px;
     position: relative;
-    /* background: rgb(177, 111, 177);
-    background: radial-gradient(
-      circle,
-      transparent 0%,
-      rgba(177, 111, 177, 0.5) 50%,
-      rgba(37, 37, 37, 1) 100%
-    ); */
+
     @media (max-width: 769px) {
       height: 500px;
     }
   }
   .gradient-4-funding {
     position: absolute;
+    bottom: 0;
   }
   .g {
     top: 50px;
     @media (max-width: 769px) {
-      left: 400px;
+      top: 0px;
     }
   }
   .clipArt {
@@ -409,6 +409,8 @@ const Main = styled.div`
   .box3 {
     width: 374px;
     height: 330px;
+    box-shadow: 0px 4px 12px 2px #0000002e;
+    background: #3b3b3b80;
 
     @media (max-width: 769px) {
       width: auto;
@@ -419,7 +421,7 @@ const Main = styled.div`
   }
   .rollingBox {
     position: absolute;
-    top: -380px;
+    top: -430px;
     z-index: 2;
   }
   .specificWidth {
@@ -446,10 +448,7 @@ const Main = styled.div`
     box-shadow: 0px 4px 12px 2px #0000002e;
     background: #3b3b3b80;
   }
-  .box3 {
-    box-shadow: 0px 4px 12px 2px #0000002e;
-    background: #3b3b3b80;
-  }
+
   .bigPurpleCtn2 {
     height: 1216.96px;
     z-index: 2;
@@ -465,13 +464,13 @@ const Main = styled.div`
     right: 0px;
 
     @media (max-width: 769px) {
-      height: 800px;
+      height: auto;
     }
   }
   .consulation2 {
     height: 1216.96px;
     @media (max-width: 769px) {
-      height: 800px;
+      height: auto;
     }
   }
 

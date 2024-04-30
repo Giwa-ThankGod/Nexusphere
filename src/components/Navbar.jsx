@@ -20,33 +20,38 @@ const Navbar = () => {
           show && "active flex-col justify-center items-center"
         }`}
       >
-        <img src={logo} alt="" srcset="" className="lg:pr-72 pr-5 pl-4" />
+        <img
+          src={logo}
+          alt=""
+          srcset=""
+          className="lg:pr-72 pr-5 lg:pl-14 pl-5"
+        />
         <div className={`lg:flex  ${show ? "block text-center" : "hidden"}`}>
           <Link to="/">
             <p
               className={`${
                 path.pathname == "/" ? "text-purple-700" : "text-white"
-              } lg:text-base text-lg font-medium py-2 lg:py-0 px-2`}
+              } lg:text-xl text-lg font-medium py-2 lg:py-0 px-2`}
             >
               Home
-            </p>
-          </Link>
-          <Link to="/about">
-            <p
-              className={`${
-                path.pathname == "/about" ? "text-purple-700" : "text-white"
-              } lg:text-base text-lg font-medium py-2 lg:py-0 px-2`}
-            >
-              About
             </p>
           </Link>
           <Link to="/services">
             <p
               className={`${
                 path.pathname == "/services" ? "text-purple-700" : "text-white"
-              } lg:text-base text-lg font-medium py-2 lg:py-0 px-2`}
+              } lg:text-xl text-lg font-medium py-2 lg:py-0 px-2`}
             >
-              Services
+              Sevice
+            </p>
+          </Link>
+          <Link to="/about">
+            <p
+              className={`${
+                path.pathname == "/about" ? "text-purple-700" : "text-white"
+              } lg:text-xl text-lg font-medium py-2 lg:py-0 px-2`}
+            >
+              Blog
             </p>
           </Link>
           {show && (

@@ -1,11 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const GradientButton = () => {
   return (
-    <Button className="rounded-2xl lg:py-7 py-3 lg:px-12 px-3 text-white lg:text-2xl text-lg font-500 font-semibold">
-      Begin your project
-    </Button>
+    <Link to="/contact">
+      <Button className="rounded-2xl hover:bg-white lg:py-7 py-3 lg:px-12 px-3 text-white lg:text-2xl text-lg font-500 font-semibold cursor-pointer">
+        Begin your project
+      </Button>
+    </Link>
   );
 };
 
