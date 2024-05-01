@@ -204,11 +204,37 @@ const Content = () => {
                   takes center stage.{" "}
                 </span>
               </p>
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 1.5 }}
+                variants={{
+                  visible: { opacity: 1, x: 0 },
+                  hidden: { opacity: 0, x: "100%" },
+                }}
+                className="z-20 lg:hidden block cursor-pointer rounded-lg overfow-hidden w-full"
+              >
+                {" "}
+                <iframe
+                  width={"100%"}
+                  height="315"
+                  src="https://www.youtube.com/embed/rvAw4fUWK8k"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  className="rounded-lg"
+                  style={{ width: "100%" }}
+                ></iframe>
+              </motion.div>{" "}
               <p className="text-white text-lg justify-start pt-5 pb-3">
-                <span style={{ color: "#FF99FF" }}>
+                <span
+                  className="lg:text-base text-2xl"
+                  style={{ color: "#FF99FF" }}
+                >
                   What sets us apart is our unique selling point:
                 </span>{" "}
-                a <br /> commitment to grassroots marketing that goes <br />{" "}
+                <br /> a commitment to grassroots marketing that goes <br />{" "}
                 beyond the surface, reaching the heart of your <br /> target
                 audience through a dynamic blend of both <br /> digital and
                 traditional channels.
@@ -223,24 +249,21 @@ const Content = () => {
                 visible: { opacity: 1, x: 0 },
                 hidden: { opacity: 0, x: "100%" },
               }}
-              className="z-20  cursor-pointer"
+              className="z-20 lg:block hidden cursor-pointer overfow-hidden"
             >
               {" "}
-              <div style={{ position: "relative", overflow: "visible" }}>
-                <iframe
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/rvAw4fUWK8k"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                  className="lg:block hidden"
-                  style={{ position: "absolute", zIndex: "20px" }}
-                ></iframe>
-              </div>
+              <iframe
+                width={window.innerWidth < 786 ? "100%" : "560"}
+                height="315"
+                src="https://www.youtube.com/embed/rvAw4fUWK8k"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                className="rounded-lg"
+              ></iframe>
             </motion.div>
           </div>
-          <div className="brands">
+          {/* <div className="brands">
             <p className="text-white text-center text-xl font-medium pb-12 pt-1">
               Trusted by
             </p>
@@ -257,7 +280,7 @@ const Content = () => {
                 <img src={Frame6} alt="" className="social-img2" />
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="flex flex-col items-center nav relative">
@@ -275,7 +298,7 @@ const Content = () => {
               visible: { opacity: 1, y: 0, x: 0 },
               hidden: { opacity: 0, y: "100%", x: "-100%" },
             }}
-            className="text-center pb-32 lg:text-lg text-xs text-white"
+            className="text-center pb-32 lg:text-lg text-sm text-white"
           >
             Nexusphere offers a diverse array of expertly crafted services,
             seamlessly merging creativity and technology to deliver <br />{" "}
@@ -311,7 +334,12 @@ const Content = () => {
                   {val.text}
                 </p>
               </div>
-              <Link to="/contact">
+              <Link
+                to={`/services?section=${val.title
+                  .split(" ")
+                  .join("-")
+                  .toLowerCase()}`}
+              >
                 <Button className="rounded-2xl lg:mb-12 mb-5 py-2 px-5 text-white text-xl font-500 font-semibold">
                   Learn more
                 </Button>
@@ -393,7 +421,7 @@ const Content = () => {
         </div>{" "}
       </div> */}
       <Gradient />
-      <div className="nav pb-28 relative">
+      {/* <div className="nav pb-28 relative">
         <img
           src={map}
           alt=""
@@ -421,9 +449,9 @@ const Content = () => {
           >
             {[1, 2, 3].map((val) => (
               <div className="flex justify-center">
-                <div className="reviews flex flex-col justify-ceneter mx-3 px-5 pt-10">
+                <div className="reviews flex flex-col justify-ceneter mx-3 lg:px-5 px-2 pt-10">
                   <div className="flex justify-between items-center">
-                    <div className="flex items-center">
+                    <div className="flex items-center ">
                       <div>
                         <img
                           src={woman}
@@ -431,11 +459,11 @@ const Content = () => {
                           className="lg:w-16 lg:h-16 w-10 h-10"
                         />
                       </div>
-                      <p className="text-black lg:text-base text-sm pl-2">
+                      <p className="text-black lg:text-base text-xs lg:pl-2 pl-0">
                         Jassica homes{" "}
                       </p>
                     </div>
-                    <div>
+                    <div className="flex items-center">
                       <img src={rating} alt="" className="lg:h-6 h-2" />
                     </div>
                   </div>
@@ -455,7 +483,7 @@ const Content = () => {
             ))}
           </Carousel>
         </div>
-      </div>
+      </div> */}
       <div style={{ background: "#2A1745" }}>
         <div className="flex flex-col justify-center items-center">
           <p className="pt-32 lg:text-4xl text-2xl pb-4 text-center text-white lg:pb-16 pb-5">

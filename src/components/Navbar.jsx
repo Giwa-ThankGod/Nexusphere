@@ -26,12 +26,14 @@ const Navbar = () => {
             show && "active flex-col justify-center items-center"
           }`}
         >
-          <img
-            src={logo}
-            alt=""
-            srcset=""
-            className="lg:pr-72 pr-5 lg:pl-14 pl-5"
-          />
+          <Link to="/">
+            <img
+              src={logo}
+              alt=""
+              srcset=""
+              className="lg:pr-72 pr-5 lg:pl-14 pl-5 cursor-pointer"
+            />
+          </Link>
           <div className={`lg:flex  ${show ? "block text-center" : "hidden"}`}>
             <Link to="/">
               <p

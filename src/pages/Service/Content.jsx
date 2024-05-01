@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../components/Navbar";
 import styled from "styled-components";
 import Hero from "../../components/Hero";
@@ -30,8 +30,11 @@ import branding from "../../assets/branding.png";
 import star from "../../assets/visiomImgs/star.png";
 import Ellipse3 from "../../assets/Ellipse3.png";
 import { blogs, servicesTwo } from "../../helpers/Static/DummyData";
+import { useSearchParams } from "react-router-dom";
 
 const Content = () => {
+  const [searchParams] = useSearchParams();
+
   const data = [
     {
       name: "SEO",
@@ -95,15 +98,23 @@ const Content = () => {
       img: marketingTwelve,
     },
   ];
+
+  useEffect(() => {
+    // get id from URL
+    const id = searchParams.get("section") || "top";
+
+    document.querySelector(`#${id}`).scrollIntoView();
+  }, []);
+
   return (
-    <Main>
+    <Main id="top">
       <div className="nav h-32">
         <Navbar />
       </div>
       <Hero
         title="Our Services"
         desc="Our services offers cutting-edge solutions tailored to meet your needs. From innovative technology solutions, we strive to exceed expectations and drive success for your project.  With a focus on quality, reliability, and innovation, we’re here to help you thrive
- in today’s dynamic marketplace."
+              in today’s dynamic marketplace."
       />
       <div className="nav">
         <img src={eye} alt="" />
@@ -115,7 +126,7 @@ const Content = () => {
           className="lg:block hidden BigPurple absolute zIndex nav w-full"
         />
         <div className="InnerBigPurple lg:flex items-center lg:justify-around lg:px-0 px-5">
-          <div>
+          <div id="marketing">
             <p className="text-white textUnderLine">
               <span className="textUnderLine2">MARKETING</span>
             </p>
@@ -132,7 +143,7 @@ const Content = () => {
           </div>
         </div>
       </div>
-      <div className="nav lg:pb-40 pb-20">
+      <div className="nav lg:pb-40 pb-20" id="nexusphere-afrimarket">
         <div className=" services grid lg:grid-cols-3 gap-5 lg:px-36 px-5 relative">
           {data.map((val, i) => (
             <div
@@ -152,7 +163,10 @@ const Content = () => {
         </div>
       </div>
       <div className="nav">
-        <div className="pt-16 lg:pt-36 grid lg:grid-cols-2 items-start">
+        <div
+          className="pt-16 lg:pt-36 grid lg:grid-cols-2 items-start"
+          id="offline-marketing"
+        >
           <div className="lg:flex justify-center hidden relative">
             <img src={women} alt="" srcset="" />
             <img src={star} alt="" className="absolute top-42 left-24" />
@@ -204,7 +218,7 @@ const Content = () => {
           <GradientButton />
         </div>
       </div>
-      <div className="nav pb-10">
+      <div className="nav pb-10" id="branding">
         <div className="pt-5 lg:lg-36 grid lg:grid-cols-2 items-start relative">
           <div className=" lg:pl-56 pl-5 pt-20">
             <p className="textUnderLine">
@@ -304,7 +318,10 @@ const Content = () => {
           alt=""
           className="BigPurple2 lg:block hidden absolute zIndex nav"
         />
-        <div className="consulation2 lg:pl-5 pl-5 flex justify-around">
+        <div
+          className="consulation2 lg:pl-5 pl-5 flex justify-around"
+          id="consultation"
+        >
           <div className="lg:mt-16 mt-5">
             <p className="text-white textUnderLine">
               <span className="textUnderLine2">CONSULTATION </span>
@@ -341,7 +358,10 @@ const Content = () => {
           ))}
         </div>
       </div>
-      <div className="nav lg:pt-14 funding flex flex-col items-center justify-center">
+      <div
+        className="nav lg:pt-14 funding flex flex-col items-center justify-center"
+        id="community-building"
+      >
         {/* <img src={gradiente} className="gradient-4-funding" /> */}
         <img src={Ellipse3} className="gradient-4-funding w-full mb-10" />
         <p className="text-white textUnderLine">
