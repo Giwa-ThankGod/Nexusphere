@@ -65,8 +65,12 @@ const Navbar = () => {
             {show && (
               <div className={`mt-4`}>
                 <div className="flex justify-center mb-3">
-                  <img srcSet={l} alt="" className="logo mx-2" />
-                  <img srcSet={telegram} alt="" className="logo mx-2" />
+                  <Link to="https://www.linkedin.com/company/nexusphere/">
+                    <img srcSet={l} alt="" className="logo mx-2" />
+                  </Link>
+                  <Link to="https://t.me/+87QTjXDts2s5OTdk">
+                    <img srcSet={telegram} alt="" className="logo mx-2" />
+                  </Link>
                 </div>
                 <Link to="/contact">
                   <button className="rounded text-white py-2 px-5 lg:mr-4 lg:ml-12">
