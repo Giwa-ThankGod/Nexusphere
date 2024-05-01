@@ -22,10 +22,18 @@ const Footer = () => {
             media, we craft tailored strategies for impactful online presence.
           </p>
           <div className="flex items-center py-6">
-            <Link to="https://www.instagram.com/sailwith_nexusphere?igsh=MzRlODBiNWFlZA=="><img srcSet={instagram} alt="" className="pr-6" /></Link>
-            <Link to="https://www.facebook.com/profile.php?id=61557765987604"><img srcSet={Facebook} alt="" className="pr-6" /></Link>
-            <Link to="https://x.com/nexusphere1?s=21"><img srcSet={twitter} alt="" className="pr-6" /></Link>
-            <Link to=""><img srcSet={linkedin} alt="" className="pr-6" /></Link>
+            <Link to="https://www.instagram.com/sailwith_nexusphere?igsh=MzRlODBiNWFlZA==">
+              <img srcSet={instagram} alt="" className="pr-6" />
+            </Link>
+            <Link to="https://www.facebook.com/profile.php?id=61557765987604">
+              <img srcSet={Facebook} alt="" className="pr-6" />
+            </Link>
+            <Link to="https://x.com/nexusphere1?s=21">
+              <img srcSet={twitter} alt="" className="pr-6" />
+            </Link>
+            <Link to="">
+              <img srcSet={linkedin} alt="" className="pr-6" />
+            </Link>
           </div>
           <p className="lg:text-lg text-sm">Subscribe to our newsletter </p>
           <div className="flex pt-5 relative">
@@ -41,17 +49,28 @@ const Footer = () => {
             />
           </div>
         </div>
+
         <div className="grid lg:grid-cols-3 md:grid-cols-2">
           <div className="flex justify-center">
             <div>
               <p className="title text-xl lg:mt-0 mt-3 lg:pb-10 pb-3 font-bold responsiveLinks">
                 Support
               </p>
-              <Link to="/about"><p className="pb-2 responsiveLinks">About</p></Link>
-              <Link to="/contact"><p className="pb-2 responsiveLinks">Contact us</p></Link>
-              <Link to="/"><p className="pb-2 responsiveLinks">Careers</p></Link>
-              <Link to="/services"><p className="pb-2 responsiveLinks">Services</p></Link>
-              <Link to="/"><p className="responsiveLinks">Blog</p></Link>
+              <Link to="/about">
+                <p className="pb-2 responsiveLinks">About</p>
+              </Link>
+              <Link to="/contact">
+                <p className="pb-2 responsiveLinks">Contact us</p>
+              </Link>
+              <Link to="/">
+                <p className="pb-2 responsiveLinks">Careers</p>
+              </Link>
+              <Link to="/services">
+                <p className="pb-2 responsiveLinks">Services</p>
+              </Link>
+              <Link to="/">
+                <p className="responsiveLinks">Blog</p>
+              </Link>
             </div>
           </div>
           <div className="flex justify-center">
@@ -75,16 +94,16 @@ const Footer = () => {
               </div>
               <div className="pb-2 flex items-start responsiveLinks">
                 <img src={phone} alt="" className="mr-2 w-5 h-5" />
-                <span>+234784766547</span>
+                <span>+234 701 276 3719</span>
               </div>
-              <div className="pb-2 flex items-start responsiveLinks">
+              {/* <div className="pb-2 flex items-start responsiveLinks">
                 <img src={phone} alt="" className="mr-2 w-5 h-5" />
                 <span>support@nexusphere.io</span>
-              </div>
-              <div className="flex items-start responsiveLinks">
+              </div> */}
+              {/* <div className="flex items-start responsiveLinks">
                 <img src={location} alt="" className="mr-2 w-5 h-5" />
                 <span>794 Mcallister St San Francisco, 94102</span>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

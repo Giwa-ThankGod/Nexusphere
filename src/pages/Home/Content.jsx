@@ -301,8 +301,20 @@ const Content = () => {
               visible: { opacity: 1, x: 0 },
               hidden: { opacity: 0, x: "100%" },
             }}
+            className="z-20  cursor-pointer"
           >
-            <img src={youtubeT} alt="" className="z-10" />
+            {" "}
+            <div style={{ position: "relative", overflow: "visible" }}>
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/rvAw4fUWK8k"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                style={{ position: "absolute", zIndex: "20px" }}
+              ></iframe>
+            </div>
           </motion.div>
         </div>
         <div className="brands">
@@ -522,16 +534,8 @@ const Content = () => {
       </div>
       <div style={{ background: "#2A1745" }}>
         <div className="flex flex-col justify-center items-center">
-          <p className="pt-32 lg:text-4xl text-2xl pb-4 text-center text-white">
+          <p className="pt-32 lg:text-4xl text-2xl pb-4 text-center text-white lg:pb-16 pb-5">
             Be a part of our community
-          </p>
-          <p
-            // style={{ width: "768px" }}
-            className="text-center lg:text-sm text-xs lg:pb-16 pb-5 text-white"
-          >
-            Become Part of Our Vibrant Communities, Connect, Collaborate, and
-            Create with Innovators Like You. <br /> Join Us Now lets Shape the
-            Future of your project together.
           </p>
         </div>
         <div className="flex justify-center px-5 pb-40">
