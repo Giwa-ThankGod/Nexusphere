@@ -8,10 +8,12 @@ import HEROMAGE from "../../assets/HEROMAGE.png";
 import box from "../../assets/box.png";
 import LooperGroup from "../../assets/LooperGroup.png";
 import Bitcoin from "../../assets/BTC.png";
-import BNB from "../../assets/BNB.png";
-import eth from "../../assets/ETH.png";
-import Dorge from "../../assets/DOGE.png";
-import upArrow from "../../assets/VectorA.png";
+import pinkcircle from "../../assets/pinkcircle.png";
+import arrow_forward_ios from "../../assets/arrow_forward_ios.png";
+// import BNB from "../../assets/BNB.png";
+// import eth from "../../assets/ETH.png";
+// import Dorge from "../../assets/DOGE.png";
+// import upArrow from "../../assets/VectorA.png";
 import downArrow from "../../assets/VectorB.png";
 import youtubeT from "../../assets/youtubeT.png";
 import Frame1 from "../../assets/Frame1.png";
@@ -159,7 +161,7 @@ const Content = () => {
           </motion.div>
           <div id="tradePrice" className="absolute bottom-10 w-full">
             {/* <!-- TradingView Widget BEGIN --> */}
-              <TradingViewTickerTape />
+            <TradingViewTickerTape />
             {/* <!-- TradingView Widget END --> */}
           </div>
         </div>
@@ -348,7 +350,7 @@ const Content = () => {
           ))}
         </div>
       </div>
-      {/* <div
+      <div
         className="relative nav"
         style={{ background: "rgb(26 26 26)", zIndex: "-2", left: "0px" }}
       >
@@ -359,11 +361,11 @@ const Content = () => {
           className="absolute b"
           // style={{ height: "1328px" }}
         />
-        <p className="text-white lg:pt-80 pt-20 text-center lg:text-4xl text-2xl">
+        {/* <p className="text-white lg:pt-80 pt-20 pb-24 text-center lg:text-4xl text-2xl">
           Projects we’ve worked on
-        </p>
-        <div className=" pt-24">
-          <div className="grid lg:grid-cols-3 place-items-center lg:px-36">
+        </p> */}
+        <div className="">
+          {/* <div className="grid lg:grid-cols-3 place-items-center lg:px-36">
             {companies.map((val, i) => (
               <div
                 className={`${i == 2 || i == 5 ? "" : "borderRight"} ${
@@ -390,7 +392,7 @@ const Content = () => {
                 </motion.div>{" "}
               </div>
             ))}
-          </div>
+          </div> */}
           <div className="projects">
             <motion.div
               className="flex flex-col items-center"
@@ -419,7 +421,7 @@ const Content = () => {
             </div>
           </div>{" "}
         </div>{" "}
-      </div> */}
+      </div>
       <Gradient />
       {/* <div className="nav pb-28 relative">
         <img

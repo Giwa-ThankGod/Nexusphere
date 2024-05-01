@@ -177,13 +177,13 @@ const Content = () => {
                 OUR AFRICA OFFLINE SERVICE:
               </span>
             </p>
-            <p className="pb-3 text-white lg:text-base text-sm">
+            <p className="pb-3 text-white lg:text-base">
               Our approach to offline marketing goes beyond traditional
               strategies . We immerse ourselves in representing your brand as
               ambassadors, building personal relationship with your audience,
               and becoming passionate Advocates for your project.
             </p>
-            <p className="pb-3 text-white lg:text-base text-sm">
+            <p className="pb-3 text-white lg:text-base">
               We take the time to deeply understand your project, ensuring that
               we possess in-depth knowledge to effectively convey your value
               proposition to the outside world. By doing so, we bring your
@@ -191,13 +191,13 @@ const Content = () => {
               diverse offline settings where your projects target audience can
               be found.
             </p>
-            <p className="pb-3 text-white lg:text-base text-sm">
+            <p className="pb-3 text-white lg:text-base">
               Furthermore, we proactively seek to build partnerships with local
               influencers, reputable individuals, educational institutions and
               other firms to establish meaningful connections and foster trust
               within the community.
             </p>
-            <p className="pb-3 text-white lg:text-base text-sm">
+            <p className="pb-3 text-white lg:text-base">
               This collaborative approach helps to amplify your brand presence
               and credibility, leveraging the influence and authority of this
               partners to reach and spread the word to the target audience.
@@ -206,7 +206,7 @@ const Content = () => {
               experiences, and deep audience understanding to ensure your
               message connects on a deeper level.
             </p>
-            <p className="pb-3 text-white lg:text-base text-sm">
+            <p className="pb-3 text-white lg:text-base">
               By representing your brand offline in a genuine and informed
               manner, we strive to create impactful and lasting impressions,
               nurturing a strong connection between your project and it audience
