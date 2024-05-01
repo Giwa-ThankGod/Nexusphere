@@ -1,15 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import Navbar from "../../components/Navbar";
+import TradingViewTickerTape from "../../components/TradingViewTickerTape";
 
 import GradientButton from "../../components/GradientButton";
 import HEROMAGE from "../../assets/HEROMAGE.png";
 import box from "../../assets/box.png";
 import LooperGroup from "../../assets/LooperGroup.png";
 import Bitcoin from "../../assets/BTC.png";
-import BNB from "../../assets/Bnb.png";
-import eth from "../../assets/Eth.png";
-import Dorge from "../../assets/Doge.png";
+import BNB from "../../assets/BNB.png";
+import eth from "../../assets/ETH.png";
+import Dorge from "../../assets/DOGE.png";
 import upArrow from "../../assets/VectorA.png";
 import downArrow from "../../assets/VectorB.png";
 import youtubeT from "../../assets/youtubeT.png";
@@ -43,7 +44,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import { motion, useInView } from "framer-motion";
 
-import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Content = () => {
@@ -93,58 +93,6 @@ const Content = () => {
       text: "Our approach to offline marketing goes beyond traditional strategies . We immerse ourselves in representing your brand as ambassadors, building personal relationship ...",
     },
   ];
-
-  const [prices, setPrices] = useState({
-    BTC: 60081.69,
-    ETH: 2972.02,
-    BNB: 577.13,
-    DOGE: 0.1325,
-  });
-  const [intervalId, setIntervalId] = useState(null);
-  useEffect(() => {
-    console.log("Effect Triggered...");
-    const fetchData = async () => {
-      console.log("Fetching data...");
-      try {
-        const apiKey =
-          "e123ddca6548517c0f0bed072383c5697329ab21b0c0d1636369090928b907ae";
-        const url = `https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,BNB,DOGE&tsyms=USD&api_key=${apiKey}`;
-        const response = await axios.get(url);
-        console.log(response.data);
-        setPrices({
-          BTC: response.data["BTC"]["USD"],
-          ETH: response.data["ETH"]["USD"],
-          BNB: response.data["BNB"]["USD"],
-          DOGE: response.data["DOGE"]["USD"],
-        });
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-
-    const startInterval = () => {
-      // Clear any existing interval
-      clearInterval(intervalId);
-
-      // Set up new interval
-      const id = setInterval(() => {
-        fetchData();
-      }, 12 * 60 * 60 * 1000); // 12 hours in milliseconds
-
-      // Save the interval id to state
-      setIntervalId(id);
-    };
-
-    // Start the interval when the component mounts
-    startInterval();
-
-    // Clean up interval on component unmount to prevent memory leaks
-    return () => {
-      clearInterval(intervalId); // Clear interval when unmounting
-    };
-  }, []);
 
   const companies = [
     {
@@ -209,39 +157,10 @@ const Content = () => {
           >
             <GradientButton />
           </motion.div>
-          <div className="flex absolute bottom-10 marquee overflow-hidden w-100 cursor-pointer">
-            <div className="flex items-center mr-20">
-              <img srcSet={Bitcoin} alt="" className="mr-5" />
-              <p className="text-xl font-bold text-white mr-5">Bitcoin</p>
-              <img srcSet={upArrow} alt="" className="mr-5" />
-              <p className="text-green-400 text-xl text-semi-bold">
-                $ {prices.BTC}
-              </p>
-            </div>
-            <div className="flex items-center mr-20">
-              <img srcSet={eth} alt="" className="mr-5" />
-              <p className="text-xl font-bold text-white mr-5">Ethereum</p>
-              <img srcSet={upArrow} alt="" className="mr-5" />
-              <p className="text-green-400 text-xl text-semi-bold">
-                $ {prices.ETH}
-              </p>
-            </div>
-            <div className="flex items-center mr-20">
-              <img srcSet={BNB} alt="" className="mr-5" />
-              <p className="text-xl font-bold text-white mr-5">BNB</p>
-              <img srcSet={downArrow} alt="" className="mr-5" />
-              <p className="text-green-400 text-xl text-semi-bold">
-                $ {prices.BNB}
-              </p>
-            </div>
-            <div className="flex items-center mr-20">
-              <img srcSet={Dorge} alt="" className="mr-5" />
-              <p className="text-xl font-bold text-white mr-5">Dodge</p>
-              <img srcSet={upArrow} alt="" className="mr-5" />
-              <p className="text-green-400 text-xl text-semi-bold">
-                $ {prices.DOGE}
-              </p>
-            </div>
+          <div id="tradePrice" className="absolute bottom-10 w-full">
+            {/* <!-- TradingView Widget BEGIN --> */}
+              <TradingViewTickerTape />
+            {/* <!-- TradingView Widget END --> */}
           </div>
         </div>
       </div>
@@ -579,10 +498,10 @@ const Content = () => {
             <Link to="https://www.instagram.com/sailwith_nexusphere?igsh=MzRlODBiNWFlZA==">
               <img srcSet={instaName} alt="" className="social-img mx-2" />
             </Link>
-            <Link to="/">
+            <Link to="https://www.linkedin.com/company/nexusphere/">
               <img srcSet={linkedinName} alt="" className="social-img mx-2" />
             </Link>
-            <Link to="/">
+            <Link to="https://t.me/+87QTjXDts2s5OTdk">
               <img srcSet={telegramName} alt="" className="social-img mx-2" />
             </Link>
             <Link to="https://x.com/nexusphere1?s=21">
