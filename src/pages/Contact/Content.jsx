@@ -205,10 +205,10 @@ const Content = () => {
                     <Link to="https://www.instagram.com/sailwith_nexusphere?igsh=MzRlODBiNWFlZA==">
                       <img srcSet={instaName} alt="" className="social-img" />
                     </Link>
-                    <Link to="/">
+                    <Link to="https://www.linkedin.com/company/nexusphere/">
                       <img srcSet={linkedinName} alt="" className="social-img" />
                     </Link>
-                    <Link to="/">
+                    <Link to="https://t.me/+87QTjXDts2s5OTdk">
                       <img srcSet={telegramName} alt="" className="social-img" />
                     </Link>
                     <Link to="https://x.com/nexusphere1?s=21">

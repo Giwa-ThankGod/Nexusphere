@@ -31,7 +31,7 @@ const Footer = () => {
             <Link to="https://x.com/nexusphere1?s=21">
               <img srcSet={twitter} alt="" className="pr-6" />
             </Link>
-            <Link to="">
+            <Link to="https://www.linkedin.com/company/nexusphere/">
               <img srcSet={linkedin} alt="" className="pr-6" />
             </Link>
           </div>
