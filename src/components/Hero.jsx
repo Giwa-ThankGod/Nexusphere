@@ -11,7 +11,7 @@ const Hero = ({ title, desc }) => {
         className="absolute top-0 left-0 z-1 w-full"
       />
       <p className="lg:text-9xl text-4xl text-white heading">{title}</p>
-      <p className="text-center pt-5 text-white lg:text-base text-xs px-5 desc">
+      <p className="text-center pt-5 text-white lg:text-xl text-base px-5 desc">
         {desc}
       </p>
     </Main>

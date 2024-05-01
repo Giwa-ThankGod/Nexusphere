@@ -7,9 +7,9 @@ import HEROMAGE from "../../assets/HEROMAGE.png";
 import box from "../../assets/box.png";
 import LooperGroup from "../../assets/LooperGroup.png";
 import Bitcoin from "../../assets/BTC.png";
-import bnb from "../../assets/BNB.png";
-import eth from "../../assets/ETH.png";
-import Dorge from "../../assets/DOGE.png";
+import BNB from "../../assets/Bnb.png";
+import eth from "../../assets/Eth.png";
+import Dorge from "../../assets/Doge.png";
 import upArrow from "../../assets/VectorA.png";
 import downArrow from "../../assets/VectorB.png";
 import youtubeT from "../../assets/youtubeT.png";
@@ -26,8 +26,6 @@ import service3 from "../../assets/services/service3.png";
 import service4 from "../../assets/services/service4.png";
 import service5 from "../../assets/services/service5.png";
 import service6 from "../../assets/services/service6.png";
-import pinkcircle from "../../assets/pinkcircle.png";
-import arrow_forward_ios from "../../assets/arrow_forward_ios.png";
 import map from "../../assets/map.png";
 import woman from "../../assets/woman.png";
 import linkedinName from "../../assets/linkedinName.png";
@@ -97,29 +95,30 @@ const Content = () => {
   ];
 
   const [prices, setPrices] = useState({
-    "BTC": 60081.69,
-    "ETH": 2972.02,
-    "BNB": 577.13,
-    "DOGE": 0.1325,
-  })
+    BTC: 60081.69,
+    ETH: 2972.02,
+    BNB: 577.13,
+    DOGE: 0.1325,
+  });
   const [intervalId, setIntervalId] = useState(null);
   useEffect(() => {
-    console.log('Effect Triggered...');
+    console.log("Effect Triggered...");
     const fetchData = async () => {
-      console.log('Fetching data...');
+      console.log("Fetching data...");
       try {
-        const apiKey = 'e123ddca6548517c0f0bed072383c5697329ab21b0c0d1636369090928b907ae'
-        const url = `https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,BNB,DOGE&tsyms=USD&api_key=${apiKey}`
+        const apiKey =
+          "e123ddca6548517c0f0bed072383c5697329ab21b0c0d1636369090928b907ae";
+        const url = `https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,BNB,DOGE&tsyms=USD&api_key=${apiKey}`;
         const response = await axios.get(url);
         console.log(response.data);
         setPrices({
-          "BTC": response.data['BTC']['USD'],
-          "ETH": response.data['ETH']['USD'],
-          "BNB": response.data['BNB']['USD'],
-          "DOGE": response.data['DOGE']['USD'],
-        })
+          BTC: response.data["BTC"]["USD"],
+          ETH: response.data["ETH"]["USD"],
+          BNB: response.data["BNB"]["USD"],
+          DOGE: response.data["DOGE"]["USD"],
+        });
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
 
@@ -146,7 +145,7 @@ const Content = () => {
       clearInterval(intervalId); // Clear interval when unmounting
     };
   }, []);
-  
+
   const companies = [
     {
       img: Frame1,
@@ -167,9 +166,9 @@ const Content = () => {
       img: Frame6,
     },
   ];
-  
+
   return (
-    <Main>
+    <Main className="overflow-hidden">
       <div className="hero relative">
         <Navbar />
         <img
@@ -215,25 +214,33 @@ const Content = () => {
               <img srcSet={Bitcoin} alt="" className="mr-5" />
               <p className="text-xl font-bold text-white mr-5">Bitcoin</p>
               <img srcSet={upArrow} alt="" className="mr-5" />
-              <p className="text-green-400 text-xl text-semi-bold">$ {prices.BTC}</p>
+              <p className="text-green-400 text-xl text-semi-bold">
+                $ {prices.BTC}
+              </p>
             </div>
             <div className="flex items-center mr-20">
               <img srcSet={eth} alt="" className="mr-5" />
               <p className="text-xl font-bold text-white mr-5">Ethereum</p>
               <img srcSet={upArrow} alt="" className="mr-5" />
-              <p className="text-green-400 text-xl text-semi-bold">$ {prices.ETH}</p>
+              <p className="text-green-400 text-xl text-semi-bold">
+                $ {prices.ETH}
+              </p>
             </div>
             <div className="flex items-center mr-20">
-              <img srcSet={bnb} alt="" className="mr-5" />
+              <img srcSet={BNB} alt="" className="mr-5" />
               <p className="text-xl font-bold text-white mr-5">BNB</p>
               <img srcSet={downArrow} alt="" className="mr-5" />
-              <p className="text-green-400 text-xl text-semi-bold">$ {prices.BNB}</p>
+              <p className="text-green-400 text-xl text-semi-bold">
+                $ {prices.BNB}
+              </p>
             </div>
             <div className="flex items-center mr-20">
               <img srcSet={Dorge} alt="" className="mr-5" />
               <p className="text-xl font-bold text-white mr-5">Dodge</p>
               <img srcSet={upArrow} alt="" className="mr-5" />
-              <p className="text-green-400 text-xl text-semi-bold">$ {prices.DOGE}</p>
+              <p className="text-green-400 text-xl text-semi-bold">
+                $ {prices.DOGE}
+              </p>
             </div>
           </div>
         </div>
@@ -340,7 +347,6 @@ const Content = () => {
             project.
           </motion.p>
         </div>
-        yioooo
         <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:px-36 px-8 gap-5 pb-36">
           {services.map((val, i) => (
             <motion.div

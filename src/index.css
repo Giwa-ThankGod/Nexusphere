@@ -49,6 +49,7 @@ ul {
 
 /* Custom CSS for marquee effect */
 .marquee {
+  width: 100%;
   white-space: nowrap; /* Prevent text from wrapping */
   overflow: hidden; /* Hide overflowing text */
   animation: marquee 30s linear infinite; /* Apply animation with desired duration */

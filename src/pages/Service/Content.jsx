@@ -119,7 +119,7 @@ const Content = () => {
             <p className="text-white textUnderLine">
               <span className="textUnderLine2">MARKETING</span>
             </p>
-            <p className="text-white w-80 pb-10">
+            <p className="text-white lg:text-lg text-base w-80 pb-10">
               At Nexusphere, we offer a comprehensive range of marketing
               services designed to elevate your brand and drive business growth.
               Our expert team combines creativity, data-driven strategies, and
