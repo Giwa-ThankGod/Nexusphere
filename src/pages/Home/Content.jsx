@@ -157,7 +157,7 @@ const Content = () => {
           >
             <GradientButton />
           </motion.div>
-          <div id="tradePrice" className="absolute bottom-10 bg-red-500 w-full">
+          <div id="tradePrice" className="absolute bottom-10 w-full">
             {/* <!-- TradingView Widget BEGIN --> */}
               <TradingViewTickerTape />
             {/* <!-- TradingView Widget END --> */}
