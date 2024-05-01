@@ -245,93 +245,98 @@ const Content = () => {
           </div>
         </div>
       </div>
-      <div
-        className="nav relative lg:overflow-hidden b"
-        style={{ maxWidth: "100%" }}
-      >
-        <img src={Framew} alt="" className="absolute Framew z-1" />
-        <img src={Ellipse2} alt="" className="absolute right-0 bottom-0" />
+      <div className="nav">
+        <div className="relative lg:overflow-hidden">
+          <img
+            src={Framew}
+            alt=""
+            className="absolute"
+            style={{ zIndex: "222px" }}
+          />
+          <img src={Ellipse2} alt="" className="absolute right-0 bottom-0" />
 
-        <div
-          initial={{ x: "-100%", opacity: 0 }}
-          animate={{
-            opacity: 1,
-            delay: 3,
-            x: 0,
-          }}
-          transition={{ duration: 2, delay: 2 }}
-          className="grid md:grid-cols-2 lg:px-24 px-5  pt-6 about lg:pb-32 pb-10"
-        >
-          <motion.div
-            className="lg:mr-8 lg:mb-0 mb-5 flex flex-col items-center"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 1.5 }}
-            variants={{
-              visible: { opacity: 1, x: 0 },
-              hidden: { opacity: 0, x: "-100%" },
+          <div
+            initial={{ x: "-100%", opacity: 0 }}
+            animate={{
+              opacity: 1,
+              delay: 3,
+              x: 0,
             }}
+            transition={{ duration: 2, delay: 2 }}
+            className="grid lg:grid-cols-2 lg:px-24 px-5 pt-6 about lg:pb-32 pb-10"
           >
-            <p className="text-center lg:text-5xl text-2xl text-white">
-              Welcome to Nexusphere
-            </p>
-            <p className="text-white text-lg flex justify-start pt-5 pb-3">
-              <span>
-                Where innovation meets impact, and your brand <br /> journey{" "}
-                takes center stage.{" "}
-              </span>
-            </p>
-            <p className="text-white text-lg justify-start pt-5 pb-3">
-              <span style={{ color: "#FF99FF" }}>
-                What sets us apart is our unique selling point:
-              </span>{" "}
-              a <br /> commitment to grassroots marketing that goes <br />{" "}
-              beyond the surface, reaching the heart of your <br /> target
-              audience through a dynamic blend of both <br /> digital and
-              traditional channels.
-            </p>
-          </motion.div>
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 1.5 }}
-            variants={{
-              visible: { opacity: 1, x: 0 },
-              hidden: { opacity: 0, x: "100%" },
-            }}
-            className="z-20  cursor-pointer"
-          >
-            {" "}
-            <div style={{ position: "relative", overflow: "visible" }}>
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/rvAw4fUWK8k"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                style={{ position: "absolute", zIndex: "20px" }}
-              ></iframe>
-            </div>
-          </motion.div>
-        </div>
-        <div className="brands">
-          <p className="text-white text-center text-xl font-medium pb-12 pt-1">
-            Trusted by
-          </p>
-          <div className="flex lg:justify-center  overflow-scroll">
-            <div
-              className="flex pb-14"
-              // style={{ maxWidth: "100%", height: "300px" }}
+            <motion.div
+              className="lg:mr-8 lg:mb-0 mb-5 flex flex-col items-center"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 1.5 }}
+              variants={{
+                visible: { opacity: 1, x: 0 },
+                hidden: { opacity: 0, x: "-100%" },
+              }}
             >
-              <img src={Frame1} alt="" className="social-img2" />
-              <img src={Frame2} alt="" className="social-img2" />
-              <img src={Frame3} alt="" className="social-img2" />
-              <img src={Frame4} alt="" className="social-img2" />
-              <img src={Frame5} alt="" className="social-img2" />
-              <img src={Frame6} alt="" className="social-img2" />
+              <p className="text-center lg:text-5xl text-2xl text-white">
+                Welcome to Nexusphere
+              </p>
+              <p className="text-white text-lg flex justify-start pt-5 pb-3">
+                <span>
+                  Where innovation meets impact, and your brand <br /> journey{" "}
+                  takes center stage.{" "}
+                </span>
+              </p>
+              <p className="text-white text-lg justify-start pt-5 pb-3">
+                <span style={{ color: "#FF99FF" }}>
+                  What sets us apart is our unique selling point:
+                </span>{" "}
+                a <br /> commitment to grassroots marketing that goes <br />{" "}
+                beyond the surface, reaching the heart of your <br /> target
+                audience through a dynamic blend of both <br /> digital and
+                traditional channels.
+              </p>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 1.5 }}
+              variants={{
+                visible: { opacity: 1, x: 0 },
+                hidden: { opacity: 0, x: "100%" },
+              }}
+              className="z-20  cursor-pointer"
+            >
+              {" "}
+              <div style={{ position: "relative", overflow: "visible" }}>
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/rvAw4fUWK8k"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  className="lg:block hidden"
+                  style={{ position: "absolute", zIndex: "20px" }}
+                ></iframe>
+              </div>
+            </motion.div>
+          </div>
+          <div className="brands">
+            <p className="text-white text-center text-xl font-medium pb-12 pt-1">
+              Trusted by
+            </p>
+            <div className="flex lg:justify-center  overflow-scroll">
+              <div
+                className="flex pb-14"
+                // style={{ maxWidth: "100%", height: "300px" }}
+              >
+                <img src={Frame1} alt="" className="social-img2" />
+                <img src={Frame2} alt="" className="social-img2" />
+                <img src={Frame3} alt="" className="social-img2" />
+                <img src={Frame4} alt="" className="social-img2" />
+                <img src={Frame5} alt="" className="social-img2" />
+                <img src={Frame6} alt="" className="social-img2" />
+              </div>
             </div>
           </div>
         </div>

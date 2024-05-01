@@ -50,7 +50,7 @@ const Navbar = () => {
                     : "text-white"
                 } lg:text-xl text-lg font-medium py-2 lg:py-0 px-2`}
               >
-                Sevice
+                Sevices
               </p>
             </Link>
             <Link to="/about">
@@ -59,7 +59,7 @@ const Navbar = () => {
                   path.pathname == "/about" ? "text-purple-700" : "text-white"
                 } lg:text-xl text-lg font-medium py-2 lg:py-0 px-2`}
               >
-                Blog
+                About
               </p>
             </Link>
             {show && (
