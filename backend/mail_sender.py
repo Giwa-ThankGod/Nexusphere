@@ -59,7 +59,7 @@ def submit_form():
 
     # Send HTML email
     try:
-        msg = Message(subject='New Form Submission', recipients=[os.getenv('EMAIL_USERNAME')])  # Set recipient email address
+        msg = Message(subject='New Client Project', recipients=['giwathankgod404@gmail.com'])  # Set recipient email address
 
         # Plain text fallback
         msg.body = f'''

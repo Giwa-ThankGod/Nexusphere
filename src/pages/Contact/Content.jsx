@@ -95,7 +95,7 @@ const Content = () => {
     const fetchData = async () => {
       try {
         const response = await axios.post(
-          "http://127.0.0.1:5000/submit_form",
+          "https://nexusphere.io/backend/",
           formData
         );
         // alert("Data Submitted successfully");
@@ -211,7 +211,7 @@ const Content = () => {
                     <Link to="https://t.me/+87QTjXDts2s5OTdk">
                       <img srcSet={telegramName} alt="" className="social-img" />
                     </Link>
-                    <Link to="https://x.com/nexusphere1?s=21">
+                    <Link to="https://x.com/nexusphere_?s=21">
                       <img srcSet={twitterName} alt="" className="social-img" />
                     </Link>
                   </div>

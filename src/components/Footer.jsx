@@ -28,7 +28,7 @@ const Footer = () => {
             <Link to="https://www.facebook.com/profile.php?id=61557765987604">
               <img srcSet={Facebook} alt="" className="pr-6" />
             </Link>
-            <Link to="https://x.com/nexusphere1?s=21">
+            <Link to="https://x.com/nexusphere_?s=21">
               <img srcSet={twitter} alt="" className="pr-6" />
             </Link>
             <Link to="https://www.linkedin.com/company/nexusphere/">
@@ -109,9 +109,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="lg:flex block lg:justify-between pb-6">
-        <p className="terms lg:text-left text-center lg:text-base text-xs">
+        {/* <p className="terms lg:text-left text-center lg:text-base text-xs">
           Copyright © 2022
-        </p>
+        </p> */}
         <p className="terms lg:text-base lg:text-left text-center text-xs">
           All Rights Reserved |{" "}
           <span className="blue textUnderLine2 lg:text-left text-center lg:text-base text-xs">

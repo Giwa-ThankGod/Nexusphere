@@ -288,10 +288,10 @@ const Content = () => {
       <div className="flex flex-col items-center nav relative">
         <img src={Ellipse1} alt="" className="absolute top-0 right-0 z-1" />
         <div className="">
-          <p className="pt-8 pb-5 text-center lg:text-4xl text-2xl text-white">
+          <p className="pt-8 pb-8 text-center lg:text-4xl text-2xl text-white">
             Exceptional services we render
           </p>
-          <motion.p
+          {/* <motion.p
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -306,7 +306,7 @@ const Content = () => {
             seamlessly merging creativity and technology to deliver <br />{" "}
             solutions that exceed expectations and drive success to your
             project.
-          </motion.p>
+          </motion.p> */}
         </div>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:px-36 px-8 gap-5 pb-36">
           {services.map((val, i) => (
@@ -408,7 +408,7 @@ const Content = () => {
               <p className="text-white text-center lg:text-4xl text-2xl py-5">
                 What types of project does <br /> Nexusphere work with?
               </p>
-              <p className=" text-center lg:pb-20 pb-5">
+              <p className=" text-center text-xl lg:pb-20 pb-5">
                 We work with a variety of web3 and tech projects, including
               </p>
             </motion.div>
@@ -506,7 +506,7 @@ const Content = () => {
             <Link to="https://t.me/+87QTjXDts2s5OTdk">
               <img srcSet={telegramName} alt="" className="social-img mx-2" />
             </Link>
-            <Link to="https://x.com/nexusphere1?s=21">
+            <Link to="https://x.com/nexusphere_?s=21">
               <img srcSet={twitterName} alt="" className="social-img mx-2" />
             </Link>
           </div>
